@@ -1,65 +1,49 @@
-# Base template for Gulp
+# Tree from object
 
-Template to start from before starting frontend projects.
+## Task
 
-## Install template
+Write a function `createTree` that creating list of `ul/li` from object.
 
-- Create empty repository for your project. [learn how](#) _need a link here_
-- Clone boilerplate into project directory and navigate there.
-```bash
-$ git clone https://github.com/mate-academy/gulp-template.git project-name
-$ cd project-name
-```
-- Change remote repository to recently created
-```bash
-$ git remote set-url origin github-link-of-project
-```
-- Install dependencies
-```bash
-$ npm install
-```
+Function `createTree(element, data)`
 
-All packages will be installed after executing the script above.
+`element` - is a DOM element.
+
+## Workflow
+
+- Fork the task repository.
+- Clone forked repository 
+    ```bash
+    git clone git@github.com:<user_name>>/<task_repository>.git
+    ```
+- Run `npm install`.
 
 ## Development mode 
 
-```bash
-$ npm run start
-```
-
-## Build the project
-
-```bash
-$ npm run build
-```
-
-## Linters
-
-To check codestyle manually execute command:
-```bash
-$ npm run lint
-```
-This command will check codestyle for html/scss/js files in `/src`. Also, 
-linters run on `pre-commit` hook and during development.
-
+- Run `npm run start` to start `http-server` on `http://localhost:8080`
+    When you run server the command line window will no longer be available for 
+    writing commands until you stop server (`ctrl + c`). All other commands you 
+    need to run in new command line window.
+- Make sure the code is clean. Run linters (`npm run lint`)
 - Follow [the simplified JS styleguide](https://mate-academy.github.io/style-guides/javascript-standard-modified)
 - Follow [HTML, CSS styleguide](https://mate-academy.github.io/style-guides/htmlcss.html)
+- When your solution is complete `Deploy on gh-pages`
 
 ## Deploy on gh-pages
 
-- Build the project
-```bash
-$ npm run build
-```
+- Execute `npm run deploy`. This command will build your project to the 
+`/dist` folder and push it to branch `gh-pages` in your remote repository. 
+
+## Push your code to GitHub
+
+- Add links to your `gh-page` in `readme.md`.
 - Commit and push all recent changes
-```bash
-$ git add .
-$ git commit -m 'commit message'
-$ git push origin branch-name
-```
-- Execute `npm run deploy`. This command will push the `/dist` folder to branch
-  `gh-pages` in your remote repository. 
-- Enable `gh-pages` for your repository. [learn how](#) _need a link here_
+  ```bash
+  $ git add .
+  $ git commit -m 'commit message'
+  $ git push origin master
+  ```
+- Create `Pull Request` (going forward `PR`) from forked repo `(<branch_name>)` to original repo (`master`).
+- Add a link to `PR` to Google spreadsheet. `PR` must include updated `readme.md` with `Demo`.
 
 ## Project structure
 
@@ -77,3 +61,11 @@ When task is executed, gulp starts local web server BrowserSync and opens index.
 [About BrowserSync](http://www.browsersync.io/)  
 
 Server uses `dist/` as a project root.
+
+### Demo link
+
+Add link here: `[DEMO LINK](https://<your_account>.github.io/<repo_name>/)`
+``
+### Screenshot of the tree
+![screenshot](example/object-tree.png)
+
