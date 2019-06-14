@@ -2,9 +2,7 @@
 
 ## Task
 
-Write a function `createTree` that creates a list of `ul/li` from an object.
-
-Function `createTree(element, data)`
+Write a function `createTree(element, data)` that creates a nested list of `ul/li` from an object.
 
 `element` - is a DOM element.
 
