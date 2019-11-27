@@ -19,10 +19,24 @@ const food = {
   },
 };
 
-const tree = document.querySelector('#tree');
+function createTree(data) {
+  let html = ``;
 
-function createTree(element, data) {
-  // WRITE YOUR CODE HERE
+  if (typeof data === `string`) {
+    html += `<li>${data}</li>`;
+  } else if (typeof (data) === `object`) {
+    html += `<ul>`;
+
+    for (const key in data) {
+      html += `<li>${key}</li>`;
+      html += createTree(data[key]);
+    }
+    html += `</ul>`;
+  }
+
+  return html;
 }
 
-createTree(tree, food);
+const tree = document.getElementById('tree');
+
+tree.innerHTML = createTree(food);
