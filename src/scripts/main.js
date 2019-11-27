@@ -15,29 +15,23 @@ const food = {
       'Banana': {},
       'Pineapple': {},
     },
-
   },
 };
 
 const tree = document.querySelector('#tree');
 
-function createTree(element, data) {
-  element.innerHTML = createTreeText(data);
-}
-
-function createTreeText(data) {
+const genTreeHTML = (obj) => {
   let li = '';
-  let ul;
 
-  for (const key in data) {
-    li += '<li>' + key + createTreeText(data[key]) + '</li>';
+  for (const [key, value] of Object.entries(obj)) {
+    li += `<li> ${key} ${genTreeHTML(value)} </li>`;
   }
 
-  if (li) {
-    ul = '<ul>' + li + '</ul>';
-  }
+  return `<ul> ${li} </ul>`;
+};
 
-  return ul || '';
-}
+const createTree = (element, data) => {
+  element.innerHTML = genTreeHTML(data);
+};
 
 createTree(tree, food);
