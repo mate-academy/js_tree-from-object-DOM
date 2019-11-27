@@ -23,14 +23,12 @@ const tree = document.querySelector('#tree');
 
 function createList(data) {
   let li = '';
-  let ul = '';
 
   for (const key in data) {
     li += `<li> ${key} ${createList(data[key])} </li>`;
   };
-  ul = li ? `<ul>${li}</ul>` : '';
 
-  return ul;
+  return li ? `<ul>${li}</ul>` : '';
 }
 
 function createTree(element, data) {
