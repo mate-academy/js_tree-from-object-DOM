@@ -32,12 +32,12 @@ const treeGenerator = (elem) => {
 
   const ul = document.createElement('ul');
 
-  for (const key in elem) {
+  for (const content in elem) {
     const li = document.createElement('li');
 
-    li.innerHTML = key;
+    li.innerHTML = content;
 
-    const childrenUl = treeGenerator(elem[key]);
+    const childrenUl = treeGenerator(elem[content]);
 
     if (childrenUl) {
       li.append(childrenUl);
