@@ -27,12 +27,17 @@ function createTree(element, data) {
 
 function create(data) {
   let list = '';
+  let ul;
 
   for (const key in data) {
     list += `<li>${key}${create(data[key])}</li>`;
   }
 
-  return `<ul>${list}</ul>`;
+  if (list) {
+    ul = '<ul>' + list + '</ul>';
+  }
+
+  return ul || '';
 }
 
 createTree(tree, food);
