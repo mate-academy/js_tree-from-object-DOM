@@ -32,7 +32,7 @@ function createList(data) {
     list += `<li>${key}${createList(data[key])}</li>`;
   }
 
-  return `<ul>${list}</ul>`;
+  return list ? `<ul>${list}</ul>` : '';
 }
 
 createTree(tree, food);
