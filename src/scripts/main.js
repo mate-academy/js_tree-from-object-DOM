@@ -31,8 +31,8 @@ function parser(data) {
   let html = ``;
 
   for (const key in data) {
-    html += `<li>${key}</li><ul>${parser(data[key])}</ul>`;
+    html += `<li>${key}${parser(data[key])}</li>`;
   }
 
-  return html;
+  return html === `` ? html : `<ul>${html}</ul>`;
 }
