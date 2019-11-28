@@ -42,7 +42,8 @@
   "lint-staged": {
     "linters": {
       "*.scss": [
-        "stylelint"
+        "stylelint",
+        "git add"
       ],
       "*.js": [
         "eslint",
