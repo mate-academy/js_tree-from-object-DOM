@@ -16,4 +16,4 @@ Write a function `createTree(element, data)` that creates a nested list of `ul/l
 
 **Result**
 
-- [UPDATE DEMO LINK](https://yuliiachupryna.github.io/js_tree-from-object-DOM/)
+- [UPDATE DEMO LINK](https://YuliiaChupryna.github.io/js_tree-from-object-DOM/)
