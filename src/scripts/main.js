@@ -26,6 +26,10 @@ function createTree(element, data) {
 }
 
 function createList(data) {
+  if (Object.keys(data).length === 0) {
+    return '';
+  }
+
   let li = '';
 
   for (const key in data) {
