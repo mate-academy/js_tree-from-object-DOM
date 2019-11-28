@@ -21,8 +21,18 @@ const food = {
 
 const tree = document.querySelector('#tree');
 
+const treeMaker = function(data) {
+  let li = '';
+
+  for (const item in data) {
+    li += `<li> ${item} ${treeMaker(data[item])} </li>`;
+  }
+
+  return li ? `<ul>${li}</ul>` : '';
+};
+
 function createTree(element, data) {
-  // WRITE YOUR CODE HERE
+  element.innerHTML = treeMaker(data);
 }
 
 createTree(tree, food);
