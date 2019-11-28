@@ -29,6 +29,10 @@ function createTree(element, data) {
 function createList(data) {
   const ul = document.createElement('ul');
 
+  if (Object.keys(data).length === 0) {
+    return '';
+  }
+
   for (const key in data) {
     const li = document.createElement('li');
 
