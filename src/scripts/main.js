@@ -27,7 +27,7 @@ const genTreeHTML = (obj) => {
     li += `<li> ${key} ${genTreeHTML(value)} </li>`;
   }
 
-  return `<ul> ${li} </ul>`;
+  return li ? `<ul> ${li} </ul>` : '';
 };
 
 const createTree = (element, data) => {
