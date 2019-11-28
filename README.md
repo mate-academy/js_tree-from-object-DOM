@@ -16,4 +16,4 @@ Write a function `createTree(element, data)` that creates a nested list of `ul/l
 
 **Result**
 
-- [UPDATE DEMO LINK](https://cs-cognitome.github.io/js_task-DOM-guideline/)
+- [UPDATE DEMO LINK](https://cs-cognitome.github.io/<repo_name>/)
