@@ -27,9 +27,8 @@ function createTree(element, data) {
   for (const key in data) {
     if (typeof (data[key]) === 'object') {
       const li = document.createElement('li');
-      const deletThis = 0;
 
-      li.innerText = key + deletThis;
+      li.innerText = key;
       ul.append(li);
       createTree(ul, data[key]);
       element.append(ul);
