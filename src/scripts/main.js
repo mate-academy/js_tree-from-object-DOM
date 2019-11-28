@@ -31,8 +31,12 @@ function addList(obj) {
   let list = '';
   const arr = Object.entries(obj);
 
+  if (arr.length === 0) {
+    return '';
+  }
+
   for (const [key, value] of arr) {
-    list += `<li>${key}</li>${addList(value)}`;
+    list += `<li>${key}${addList(value)}</li>`;
   }
 
   return `<ul>${list}</ul>`;
