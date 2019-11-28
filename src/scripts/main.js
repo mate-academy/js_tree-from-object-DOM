@@ -34,6 +34,10 @@ function createList(obj) {
     };
   }
 
+  if (list === '') {
+    return '';
+  }
+
   return `<ul>${list}</ul>`;
 };
 
