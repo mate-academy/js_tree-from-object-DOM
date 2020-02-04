@@ -20,52 +20,22 @@ const food = {
 };
 
 const tree = document.querySelector('#tree');
-const foodList = Object.keys(food);
-const meatList = Object.keys(food['Meat']);
-const fruitList = Object.keys(food['Fruit']);
-const redFruit = Object.keys(food['Fruit']['Red']);
-const yellowFruit = Object.keys(food['Fruit']['Yellow']);
 
 function createTree(element, data) {
-  tree.innerHTML = `
-    <ul class="food">
-      ${foodList.map(item => `
-        <li class="food__item meat">${item}
-          <ul class="food-type"></ul>
-        </li>
-      `).join('')}
-    </ul>
-  `;
+  if (!Object.keys(data).length) {
+    return;
+  }
 
-  const foodTypeList = document.querySelectorAll('.food-type');
+  const list = document.createElement('ul');
 
-  foodTypeList[0].innerHTML = `
-    ${meatList.map(item => `
-      <li class="meat__item">${item}</li>
-    `).join('')}
-  `;
+  for (const key in data) {
+    const item = document.createElement('li');
 
-  foodTypeList[1].innerHTML = `
-    ${fruitList.map(item => `
-      <li class="fruit__color fruit">${item}
-        <ul class="fruit-type__list"></ul>
-      </li>
-    `).join('')}
-  `;
-
-  const fruitTypeList = document.querySelectorAll('.fruit-type__list');
-
-  fruitTypeList[0].innerHTML = `
-    ${redFruit.map(item => `
-      <li class="fruit__red">${item}</li>
-    `).join('')}
-  `;
-
-  fruitTypeList[1].innerHTML = `
-    ${yellowFruit.map(item => `
-      <li class="fruit__yellow">${item}</li>
-    `).join('')}
-  `;
+    item.innerHTML = key;
+    list.append(item);
+    element.append(list);
+    createTree(list, data[key]);
+  }
 }
 
 createTree(tree, food);
