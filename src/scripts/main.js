@@ -36,13 +36,15 @@ function createTree(element, data) {
     keys4.push(Object.keys(data[keys[1]][key]));
   }
 
+  function map(arr) {
+    return arr.map(key => `<li>${key}</li>`).join('');
+  }
+
   element.innerHTML = `
     <ul>
       <li>${keys[0]}
         <ul>
-          ${keys2.map(key => `
-            <li>${key}</li>
-          `).join('')}
+          ${map(keys2)}
         </ul>
       </li>
 
@@ -50,17 +52,13 @@ function createTree(element, data) {
         <ul>
           <li>${keys3[0]}
             <ul>
-              ${keys4[0].map(key => `
-                <li>${key}</li>
-              `).join('')}
+              ${map(keys4[0])}
             </ul>
           </li>
 
           <li>${keys3[1]}
             <ul>
-              ${keys4[1].map(key => `
-                <li>${key}</li>
-              `).join('')}
+              ${map(keys4[1])}
             </ul>
           </li>
         </ul>
