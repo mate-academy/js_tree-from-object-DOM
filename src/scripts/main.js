@@ -30,14 +30,14 @@ function createTreeText(data) {
   let ul;
 
   for (const key in data) {
-    li += '<li>' + key + createTreeText(data[key]) + '</li>';
+    li += `<li>${key}${createTreeText(data[key])}</li>`;
   }
 
   if (li) {
-    ul = '<ul>' + li + '</ul>';
+    ul = `<ul>${li}</ul>`;
   }
 
-  return ul;
+  return ul || '';
 }
 
 createTree(tree, food);
