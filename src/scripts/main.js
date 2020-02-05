@@ -22,26 +22,25 @@ const food = {
 const tree = document.querySelector('#tree');
 
 function createTree(element, data) {
-  const ul = document.createElement('ul');
+  function createUl(obj) {
+    const ul = document.createElement('ul');
 
-  for (let i = 0; i < Object.keys(data).length; i++) {
-    const li = document.createElement('li');
+    for (let i = 0; i < Object.keys(obj).length; i++) {
+      const li = document.createElement('li');
 
-    li.innerHTML = Object.keys(data)[i];
-    ul.appendChild(li);
+      li.innerHTML = Object.keys(obj)[i];
+      ul.appendChild(li);
 
-    // console.log(Object.keys(data[Object.keys(data)[i]]));
-    // Делаем проверку на наличие ключей если их нет,
-    // то мы не добавляем через appendChild, ибо у нас ничего нет в ul,
-    // а пустой ul нам не нужен, для наглядности разкоментить console.log
-    if (Object.keys(data[Object.keys(data)[i]]).length) {
-      const nextIteration = createTree(element, data[Object.keys(data)[i]]);
+      if (Object.keys(obj[Object.keys(obj)[i]]).length) {
+        const nextIteration = createUl(obj[Object.keys(obj)[i]]);
 
-      ul.appendChild(nextIteration);
+        ul.appendChild(nextIteration);
+      }
     }
+
+    return ul;
   }
 
-  return ul;
+  tree.appendChild(createUl(data));
 }
-
-tree.appendChild(createTree(tree, food));
+createTree(tree, food);
