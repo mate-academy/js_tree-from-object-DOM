@@ -33,7 +33,7 @@ function createTree(element, data) {
 
     li.innerHTML = prop;
 
-    if (typeof data[prop] === 'object') {
+    if (Object.keys(data).length) {
       createTree(li, data[prop]);
     }
   }
