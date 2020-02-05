@@ -5,7 +5,6 @@ const food = {
     Pork: {},
     Beef: {},
   },
-
   Fruit: {
     Red: {
       Cherry: {},
@@ -16,25 +15,35 @@ const food = {
       Pineapple: {},
     },
   },
+  Vegetables: {
+    Green: {
+      Cucamber: {},
+      Cubbage: {},
+      Broccoli: {},
+    },
+  },
 };
 
 const tree = document.querySelector('#tree');
 
 function createTree(element, data) {
+  element.innerHTML += getListHtml(data);
+}
+
+function getListHtml(data) {
   if (!Object.keys(data).length) {
-    return;
+    return '';
   }
 
-  const list = document.createElement('ul');
+  return `
+    <ul>
+      ${Object.keys(data).map(key => `
 
-  for (const key in data) {
-    const item = document.createElement('li');
-
-    item.innerHTML = key;
-    list.append(item);
-    element.append(list);
-    createTree(list, data[key]);
-  }
+        <li>${key}${getListHtml(data[key])}</li>
+        
+      `).join('')}
+    </ul>
+  `;
 }
 
 createTree(tree, food);
