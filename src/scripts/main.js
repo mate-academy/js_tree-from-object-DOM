@@ -19,28 +19,6 @@ const food = {
   },
 };
 
-const food2 = {
-  'Meat': {
-    'Pork': {
-      'Fruit': {
-        'Red': {
-          'Cherry': {
-            'Beef': {
-              'Pineapple': {
-                'Banana': {
-                  'Strawberry': {
-                    'Cherry': {},
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  },
-};
-
 const tree = document.querySelector('#tree');
 const title = document.createElement('h1');
 
@@ -66,4 +44,3 @@ function createTree(element, data) {
 };
 
 createTree(tree, food);
-createTree(tree, food2);
