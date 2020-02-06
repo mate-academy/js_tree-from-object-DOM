@@ -22,7 +22,7 @@ const food = {
 const tree = document.querySelector('#tree');
 
 function createTree(element, data) {
-  function hasObjectKey(obj) {
+  function makeList(obj) {
     let insertList = '';
 
     for (const key in obj) {
@@ -31,7 +31,7 @@ function createTree(element, data) {
       } else {
         insertList += `
           <li>${key}
-            <ul>${hasObjectKey(obj[key])}</ul>
+            <ul>${makeList(obj[key])}</ul>
           </li>
         `;
       }
@@ -40,7 +40,7 @@ function createTree(element, data) {
     return insertList;
   }
 
-  const insert = hasObjectKey(data);
+  const insert = makeList(data);
 
   tree.insertAdjacentHTML('afterbegin', `<ul>${insert}</ul>`);
 }
