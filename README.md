@@ -16,4 +16,4 @@ Write a function `createTree(element, data)` that creates a nested list of `ul/l
 
 **Result**
 
-- [UPDATE DEMO LINK](https://ded-git.github.io/<repo_name>/)
+- [UPDATE DEMO LINK](https://ded-git.github.io/js_task-DOM-guideline/)
