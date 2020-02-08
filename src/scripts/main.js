@@ -22,47 +22,21 @@ const food = {
 const tree = document.querySelector('#tree');
 
 function createTree(element, data) {
-  const dataArr = (obj) => Object.entries(obj);
-  const createItem = (param) => {
-    const li = document.createElement('li');
+  function createLeyout(obj) {
+    let markup = '';
 
-    li.setAttribute('id', `item${param}`);
-    li.innerHTML = `<p>${param}</p>`;
+    for (const key in obj) {
+      if (Object.keys(obj[key]).length === 0) {
+        markup += `<li>${key}</li>`;
+      } else {
+        markup += `<li>${key}<ul>${createLeyout(obj[key])}</ul></li>`;
+      }
+    }
 
-    return li;
-  };
-
-  if (!document.getElementById('mainList')) {
-    const mainList = document.createElement('ul');
-
-    mainList.setAttribute('id', `mainList`);
-    element.insertAdjacentElement('beforeend', mainList);
+    return markup;
   }
 
-  const rootList = element.querySelector('ul');
-
-  dataArr(data)
-    .forEach(item => {
-      if (dataArr(item[1]).length) {
-        const ul = document.createElement('ul');
-        const ulId = item[0].toLowerCase();
-
-        ul.setAttribute('id', ulId);
-
-        rootList.insertAdjacentElement('beforeend',
-          createItem(item[0]));
-
-        const root = document.getElementById(`item${item[0]}`);
-
-        root.insertAdjacentElement('beforeend',
-          ul);
-
-        createTree(root, item[1]);
-      } else {
-        rootList.insertAdjacentElement('beforeend',
-          createItem(item[0]));
-      }
-    });
+  element.innerHTML = `<ul>${createLeyout(data)}</ul>`;
 }
 
 createTree(tree, food);
