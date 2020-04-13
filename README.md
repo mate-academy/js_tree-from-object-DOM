@@ -6,6 +6,8 @@ Write a function `createTree(element, data)` that creates a nested list of `ul/l
 
 `element` - is a DOM element.
 
+> You should use [Recursion](https://javascript.info/recursion) to solve the task.
+
 ### Screenshot of the tree
 ![screenshot](example/object-tree.png)
 
