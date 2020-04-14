@@ -24,14 +24,14 @@ const tree = document.querySelector('#tree');
 function createTree(element, data) {
   const ul = document.createElement('ul');
 
-  ul.append('ul');
+  element.append(ul);
 
   for (const item in data) {
     const li = document.createElement('li');
 
     li.textContent = item;
-    ul.append('li');
-    createTree(element, data[item]);
+    ul.append(li);
+    createTree(li, data[item]);
   }
 }
 
