@@ -11,11 +11,11 @@ Write a function `createTree(element, data)` that creates a nested list of `ul/l
 ### Screenshot of the tree
 ![screenshot](example/object-tree.png)
 
----
+--- 
 **Read the guideline before start**
 
 [Guideline](https://github.com/mate-academy/js_task-DOM-guideline)
 
 **Result**
 
-- [UPDATE DEMO LINK](https://<your_account>.github.io/<repo_name>/)
+- [UPDATE DEMO LINK](https://github.com/YaroslavMakarov/js_tree-from-object-DOM.git)
