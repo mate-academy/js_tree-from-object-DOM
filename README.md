@@ -18,4 +18,4 @@ Write a function `createTree(element, data)` that creates a nested list of `ul/l
 
 **Result**
 
-- [DEMO LINK](https://MykolaMak.github.io/js_tree-from-object-DOM)
+- [DEMO LINK](https://MykolaMak.github.io/js_tree-from-object-DOM/)
