@@ -19,10 +19,20 @@ const food = {
   },
 };
 
-const tree = document.querySelector('#tree');
+const tree = document.getElementById('tree');
 
 function createTree(element, data) {
-  // WRITE YOUR CODE HERE
+  element.innerHTML = parser(data);
 }
 
 createTree(tree, food);
+
+function parser(data) {
+  let html = ``;
+
+  for (const key in data) {
+    html += `<li>${key}${parser(data[key])}</li>`;
+  }
+
+  return html === `` ? html : `<ul>${html}</ul>`;
+}
