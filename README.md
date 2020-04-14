@@ -12,10 +12,13 @@ Write a function `createTree(element, data)` that creates a nested list of `ul/l
 ![screenshot](example/object-tree.png)
 
 ---
-**Read the guideline before start**
+1. **Read the guideline before start**
 
-[Guideline](https://github.com/mate-academy/js_task-DOM-guideline)
+    - [Guideline](https://github.com/mate-academy/js_task-DOM-guideline)
 
-**Result**
+2. **Result**
 
-- [UPDATE DEMO LINK](https://<your_account>.github.io/<repo_name>/)
+   Replace `<your_account>` with your Github username in the links
+
+    - [DEMO LINK](https://<your_account>.github.io/<repo_name>/)
+    - [PULL REQUEST](https://github.com/mate-academy/js_alliterated-actors/pull/223)
