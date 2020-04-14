@@ -20,5 +20,5 @@ Write a function `createTree(element, data)` that creates a nested list of `ul/l
 
    Replace `<your_account>` with your Github username in the links
 
-    - [DEMO LINK](https://<your_account>.github.io/<repo_name>/)
-    - [PULL REQUEST](https://github.com/mate-academy/js_alliterated-actors/pull/223)
+    - [DEMO LINK](https://andreas-just.github.io/js_tree-from-object-DOM/)
+    - [PULL REQUEST](https://github.com/mate-academy/js_tree-from-object-DOM/pull/103/files)
