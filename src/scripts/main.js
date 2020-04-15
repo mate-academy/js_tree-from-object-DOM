@@ -25,12 +25,12 @@ function createTree(element, data) {
   element.innerHTML = createTreeText(data);
 }
 
-function createTreeText(obj) {
+function createTreeText(objTree) {
   let li = '';
   let ul;
 
-  for (const key in obj) {
-    li += '<li>' + key + createTreeText(obj[key]) + '</li>';
+  for (const key in objTree) {
+    li += '<li>' + key + createTreeText(objTree[key]) + '</li>';
   }
 
   if (li) {
