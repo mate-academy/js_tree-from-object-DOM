@@ -29,7 +29,9 @@ function createTree(element, data) {
 
     point.textContent = key;
 
-    createTree(point, data[key]);
+    if (Object.keys(data[key]).length !== 0) {
+      createTree(point, data[key]);
+    }
 
     list.append(point);
   }
