@@ -20,9 +20,27 @@ const food = {
 };
 
 const tree = document.querySelector('#tree');
+const title = document.createElement('h1');
+
+title.innerHTML = 'Recursion object list';
+
+document.body.append(title);
 
 function createTree(element, data) {
-  // WRITE YOUR CODE HERE
-}
+  const list = document.createElement('ul');
+
+  element.append(list);
+
+  for (const key in data) {
+    const listItem = document.createElement('li');
+
+    listItem.innerHTML = key;
+    list.append(listItem);
+
+    if (Object.values(data[key]).length > 0) {
+      createTree(listItem, data[key]);
+    }
+  };
+};
 
 createTree(tree, food);
