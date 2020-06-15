@@ -41,8 +41,6 @@ function createTree(element, data) {
       `;
     }
   }
-
-  return element.innerHTML;
 }
 
 createTree(tree, food);
