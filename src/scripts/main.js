@@ -33,7 +33,7 @@ function createTree(element, data) {
     </ul>
   `;
 
-  return tree.innerHTML;
+  return element.innerHTML;
 }
 
 createTree(tree, food);
