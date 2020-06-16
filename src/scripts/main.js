@@ -31,7 +31,10 @@ function createTree(element, data) {
 
     newLi.innerHTML = key;
     newUl.append(newLi);
-    createTree(newUl, data[key]);
+
+    if (Object.keys(data[key]).length !== 0) {
+      createTree(newUl, data[key]);
+    }
   }
 }
 
