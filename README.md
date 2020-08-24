@@ -18,4 +18,4 @@ Write a function `createTree(element, data)` that creates a nested list of `ul/l
 
 **Result**
 
-- [UPDATE DEMO LINK](https://YuriiRysyn.github.io/<repo_name>/)
+- [UPDATE DEMO LINK](https://YuriiRysyn.github.io/js_tree-from-object-DOM/)
