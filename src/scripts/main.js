@@ -12,38 +12,35 @@ const food = {
       'Strawberry': {},
     },
     'Yellow': {
-      'Banana': {},
+      'Banana': {
+        'Fresh': {},
+        'Old': {},
+      },
       'Pineapple': {},
     },
 
   },
 
   'Test Without Elements': {},
+  'test with non object': '',
 };
 
 const tree = document.querySelector('#tree');
 
 function createTree(container, data) {
-  const element = document.createElement('ul');
+  const ul = document.createElement('ul');
 
-  container.append(element);
+  container.append(ul);
 
   for (const key in data) {
-    const li = document.createElement('li');
+    const point = document.createElement('li');
 
-    li.innerText = key;
-    element.append(li);
+    point.textContent = key;
 
-    if (Object.keys(data[key]).length) { // if element has subElements
-      const liOfChildren = document.createElement('li');
+    ul.append(point);
 
-      liOfChildren.style.listStyleType = 'none';
-      element.append(liOfChildren);
-
-      const ul = document.createElement('ul');
-
-      liOfChildren.append(ul);
-      createTree(ul, data[key]);
+    if (Object.keys(data[key]).length) {
+      createTree(point, data[key]);
     }
   }
 }
