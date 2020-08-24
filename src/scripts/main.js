@@ -23,13 +23,14 @@ const tree = document.querySelector('#tree');
 
 function createTree(element, data) {
   for (const key in data) {
-    element.insertAdjacentHTML('beforeend', `
-      <ul>
-        <li class="${key}">${key}</li>
-      </ul>
-    `);
-
     if (key) {
+      if (!element.firstElementChild) {
+        element.insertAdjacentHTML('beforeend', '<ul></ul>');
+      }
+
+      element.firstElementChild.insertAdjacentHTML('beforeend', `
+        <li class="${key}">${key}</li>
+      `);
       createTree(document.querySelector(`.${key}`), data[key]);
     } else {
       return;
