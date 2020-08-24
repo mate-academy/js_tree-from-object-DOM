@@ -30,7 +30,8 @@ function createTree(element, data) {
     itemList.textContent = item;
     list.append(itemList);
 
-    if (typeof data[item] === 'object') {
+    if (typeof data[item] === 'object'
+    && Object.keys(data[item]).length !== 0) {
       createTree(itemList, data[item]);
     }
   }
