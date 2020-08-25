@@ -34,8 +34,6 @@ function createTree(element, data) {
 
     if (Object.values(data).length > 0) {
       createTree(li, data[key]);
-    } else {
-      return;
     }
   }
 }
