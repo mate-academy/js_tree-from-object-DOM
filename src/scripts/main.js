@@ -33,7 +33,7 @@ function createTree(element, data) {
     ul.append(li);
 
     if (Object.keys(data[key]).length) {
-      createTree(ul, data[key]);
+      createTree(li, data[key]);
     }
   }
 }
