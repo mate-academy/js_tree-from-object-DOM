@@ -31,8 +31,6 @@ function createTree(element, data) {
       ${createTree(element, data[item])}
     `).join('')}
   </ul>
-  <ul>
-  </ul>
   `;
 
   return element.innerHTML;
