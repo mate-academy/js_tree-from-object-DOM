@@ -19,8 +19,6 @@ const food = {
   },
 };
 
-// console.log(Object.keys(food['Meat']))
-
 const tree = document.querySelector('#tree');
 
 function createTree(element, data) {
