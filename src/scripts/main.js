@@ -29,10 +29,10 @@ function createTree(element, data) {
   element.innerHTML = `
   <ul>
     ${Object.keys(data).map(item => `
-      <li>
+        <li>
         ${item}
-      </li>
-    ${createTree(element, data[item])}
+        ${createTree(element, data[item])}
+        </li>
     `).join('')}
   </ul>
   `;
