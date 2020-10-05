@@ -34,7 +34,7 @@ function createTree(element, data) {
     list.append(item);
 
     if (isObject) {
-      createTree(list, data[key]);
+      createTree(item, data[key]);
     }
   }
 }
