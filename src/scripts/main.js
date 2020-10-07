@@ -32,7 +32,7 @@ function createTree(element, data) {
 
       listItem.textContent = key;
       list.append(listItem);
-      createTree(listItem.parentElement, data[key]);
+      createTree(listItem, data[key]);
     }
   }
 }
