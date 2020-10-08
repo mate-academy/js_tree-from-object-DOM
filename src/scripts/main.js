@@ -22,24 +22,27 @@ const food = {
 const tree = document.querySelector('#tree');
 
 function createTree(element, data) {
+  let list;
+
+  if (Object.keys(data).length) {
+    list = document.createElement('ul');
+    element.append(list);
+  }
+
   for (const key in data) {
-    if (typeof data[key] === 'object') {
+    if (Object.keys(data).length) {
       const listInList = document.createElement('li');
 
       listInList.textContent = key;
-      element.appendChild(listInList);
 
-      const listInListItems = document.createElement('ul');
-
-      listInList.appendChild(listInListItems);
-
-      createTree(listInListItems, data[key]);
+      list.append(listInList);
+      createTree(listInList, data[key]);
     } else {
       const listItem = document.createElement('li');
 
       listItem.textContent = data[key];
 
-      element.appendChild(listItem);
+      element.append(listItem);
     }
   }
 }
