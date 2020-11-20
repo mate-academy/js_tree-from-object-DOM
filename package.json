@@ -40,6 +40,6 @@
   },
   "dependencies": {},
   "mateAcademy": {
-    "projectType": "layout"
+    "projectType": "layoutDOM"
   }
 }
