@@ -1,9 +1,9 @@
 'use strict';
 
 const food = {
-  'Meat': {
-    'Pork': {},
-    'Beef': {},
+  'Drink': {
+    'Wine': {},
+    'Schnaps': {},
   },
 
   'Fruit': {

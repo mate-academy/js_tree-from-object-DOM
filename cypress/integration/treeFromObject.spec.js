@@ -1,18 +1,10 @@
 'use strict';
 
-Cypress.Commands.add('haveChild', (value, number) => {
+Cypress.Commands.add('haveChildren', (value, number) => {
   cy.contains(value).children().then(($tree) => {
-    const tree = $tree.get(0).children.length;
+    const treeLength = $tree.children().length;
 
-    expect(tree).to.equal(number);
-  });
-});
-
-Cypress.Commands.add('notHaveChild', (value, number) => {
-  cy.contains(value).then(($tree) => {
-    const tree = $tree.get(0).children.length;
-
-    expect(tree).to.equal(number);
+    expect(treeLength).to.equal(number);
   });
 });
 
@@ -22,29 +14,25 @@ describe('Tree from object app', () => {
   });
 
   it('should have 1 unordered list with 2 list items', () => {
-    cy.get('[id = "tree"]').children().then(($tree) => {
-      const tree = $tree.get(0).children.length;
-
-      expect(tree).to.equal(2);
-    });
+    cy.get('[id = "tree"]').children().children().should('have.length', 2);
   });
 
   it('should have an <ul> with 2 list items in first list item', () => {
-    cy.haveChild('Meat', 2);
+    cy.haveChildren('Drink', 2);
   });
 
   it('should have an <ul> with 2 list items in second list item', () => {
-    cy.haveChild('Fruit', 2);
+    cy.haveChildren('Fruit', 2);
   });
 
   it('should have 2 <li> in each <ul> in Fruits', () => {
-    cy.haveChild('Red', 2);
-    cy.haveChild('Yellow', 2);
+    cy.haveChildren('Red', 2);
+    cy.haveChildren('Yellow', 2);
   });
 
-  it('should\'t have <ul> elements in 3th children', () => {
-    cy.notHaveChild('Pork', 0);
-    cy.notHaveChild('Cherry', 0);
-    cy.notHaveChild('Banana', 0);
+  it(`shouldn't have <ul> elements in 3th children`, () => {
+    cy.contains('Cherry').children().should('have.length', 0);
+    cy.contains('Banana').children().should('have.length', 0);
+    cy.contains('Wine').children().should('have.length', 0);
   });
 });
