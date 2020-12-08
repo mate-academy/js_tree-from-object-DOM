@@ -1,6 +1,6 @@
 'use strict';
 
-Cypress.Commands.add('haveChildren', (value) => {
+Cypress.Commands.add('haveTwoChildren', (value) => {
   cy.contains(value).children().children().should('have.length', 2);
 });
 
@@ -14,16 +14,16 @@ describe('Tree from object app', () => {
   });
 
   it('should have an <ul> with 2 list items in first list item', () => {
-    cy.haveChildren('Drink');
+    cy.haveTwoChildren('Drink');
   });
 
   it('should have an <ul> with 2 list items in second list item', () => {
-    cy.haveChildren('Fruit');
+    cy.haveTwoChildren('Fruit');
   });
 
   it('should have 2 <li> in each <ul> in Fruits', () => {
-    cy.haveChildren('Red');
-    cy.haveChildren('Yellow');
+    cy.haveTwoChildren('Red');
+    cy.haveTwoChildren('Yellow');
   });
 
   it(`shouldn't have <ul> elements in 3rd children`, () => {
