@@ -26,7 +26,7 @@ describe('Tree from object app', () => {
     cy.haveChildren('Yellow');
   });
 
-  it(`shouldn't have <ul> elements in 3th children`, () => {
+  it(`shouldn't have <ul> elements in 3rd children`, () => {
     cy.contains('Cherry').children().should('have.length', 0);
     cy.contains('Banana').children().should('have.length', 0);
     cy.contains('Wine').children().should('have.length', 0);
