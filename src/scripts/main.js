@@ -12,17 +12,37 @@ const food = {
       'Strawberry': {},
     },
     'Yellow': {
-      'Banana': {},
+      'Banana': {
+        'Fresh': {},
+        'Old': {},
+      },
       'Pineapple': {},
     },
 
   },
+
+  'Test Without Elements': {},
+  'test with non object': '',
 };
 
 const tree = document.querySelector('#tree');
 
-function createTree(element, data) {
-  // WRITE YOUR CODE HERE
+function createTree(container, data) {
+  const ul = document.createElement('ul');
+
+  container.append(ul);
+
+  for (const key in data) {
+    const point = document.createElement('li');
+
+    point.textContent = key;
+
+    ul.append(point);
+
+    if (Object.keys(data[key]).length) {
+      createTree(point, data[key]);
+    }
+  }
 }
 
 createTree(tree, food);
