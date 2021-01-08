@@ -1,28 +1,18 @@
 1. Replace `<your_account>` with your Github username in the link
-    - [DEMO LINK](https://<your_account>.github.io/js_sort_table_DOM/)
-2. Follow [this instructions](https://mate-academy.github.io/layout_task-guideline/)
+    - [DEMO LINK](https://<your_account>.github.io/js_tree-from-object-DOM/)
+2. Follow [this instructions](https://github.com/mate-academy/js_task-DOM-guideline)
     - Run `npm run test` command to test your code;
     - Run `npm run test:only -- -n` to run fast test ignoring linter;
     - Run `npm run test:only -- -l` to run fast test with additional info in console ignoring linter.
 
 # Tree from object
+Write a function `createTree(element, data)` that creates a nested list of `ul/li` from an object. 
+Use keys as list items. 
 
-## Task
+`element` - is a DOM element
 
-Write a function `createTree(element, data)` that creates a nested list of `ul/li` from an object.
+`data` - is a nested object
 
-`element` - is a DOM element.
+> Hint: use [Recursion](https://javascript.info/recursion)
 
-> You should use [Recursion](https://javascript.info/recursion) to solve the task.
-
-### Screenshot of the tree
-![screenshot](example/object-tree.png)
-
----
-**Read the guideline before start**
-
-[Guideline](https://github.com/mate-academy/js_task-DOM-guideline)
-
-**Result**
-
-- [UPDATE DEMO LINK](https://<your_account>.github.io/<repo_name>/)
+![screenshot of the tree](example/object-tree.png)
