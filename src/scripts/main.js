@@ -30,12 +30,12 @@ function createTree(element, data) {
     li.innerText = product;
     ul.append(li);
 
-    if (Object.keys(data).length) {
+    if (Object.keys(data[product]).length) {
       createTree(li, data[product]);
     }
   }
 
-  element.append(ul);
+  return element.append(ul);
 }
 
 createTree(tree, food);
