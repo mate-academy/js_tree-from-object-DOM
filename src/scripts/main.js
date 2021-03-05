@@ -39,16 +39,4 @@ function createTree(element, data) {
   }
 }
 
-/* function test(element) {
-  debugger;
-  if (Object.keys(element).length !== 0) {
-    for (const key in element) {
-      console.log(key);
-      if (Object.keys(element[key]).length !== 0) {
-        test(element[key]);
-      }
-    }
-  }
-} */
-
 createTree(tree, food);
