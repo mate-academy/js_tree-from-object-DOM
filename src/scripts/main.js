@@ -27,7 +27,7 @@ function createTree(element, data) {
   for (const key in data) {
     const listElement = document.createElement('li');
 
-    listElement.innerText = key;
+    listElement.textContent = key;
     list.append(listElement);
 
     createTree(listElement, data[key]);
