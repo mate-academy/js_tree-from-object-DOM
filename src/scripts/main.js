@@ -33,9 +33,9 @@ function createTree(element, data) {
     if (data[key].length !== 0) {
       createTree(itemLi, data[key]);
     }
-  }
 
-  element.append(listUl);
+    element.append(listUl);
+  }
 }
 
 createTree(tree, food);
