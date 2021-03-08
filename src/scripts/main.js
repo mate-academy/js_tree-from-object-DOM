@@ -30,9 +30,7 @@ function createTree(element, data) {
     itemLi.innerHTML = key;
     listUl.append(itemLi);
 
-    if (data[key].length === 0) {
-      continue;
-    } else {
+    if (data[key].length !== 0) {
       createTree(itemLi, data[key]);
     }
   }
