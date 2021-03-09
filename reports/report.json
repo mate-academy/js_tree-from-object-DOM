@@ -1,0 +1,181 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-03-09T15:35:48.470Z",
+    "end": "2021-03-09T15:35:50.973Z",
+    "duration": 2277,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5b5fa600-8e83-4f9b-8769-80fe0a37f481",
+      "title": "",
+      "fullFile": "cypress\\integration\\treeFromObject.spec.js",
+      "file": "cypress\\integration\\treeFromObject.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2e466647-f3de-400d-8de0-dd6da0b8dc79",
+          "title": "Tree from object app",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should have 1 unordered list with 2 list items",
+              "fullTitle": "Tree from object app should have 1 unordered list with 2 list items",
+              "timedOut": null,
+              "duration": 816,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#tree').haveChildren(2);",
+              "err": {},
+              "uuid": "50cbca44-dfca-4587-9cd3-8618061affa4",
+              "parentUUID": "2e466647-f3de-400d-8de0-dd6da0b8dc79",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should have an <ul> with 2 list items in first list item",
+              "fullTitle": "Tree from object app should have an <ul> with 2 list items in first list item",
+              "timedOut": null,
+              "duration": 335,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Drink').haveChildren(2);",
+              "err": {},
+              "uuid": "fdbec013-55f5-40ac-9c6a-512fdf29522a",
+              "parentUUID": "2e466647-f3de-400d-8de0-dd6da0b8dc79",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should have an <ul> with 2 list items in second list item",
+              "fullTitle": "Tree from object app should have an <ul> with 2 list items in second list item",
+              "timedOut": null,
+              "duration": 324,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Fruit').haveChildren(2);",
+              "err": {},
+              "uuid": "5f20f808-f067-4c0b-9e65-03a3bd1b1d82",
+              "parentUUID": "2e466647-f3de-400d-8de0-dd6da0b8dc79",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should have 2 <li> in each <ul> in Fruits",
+              "fullTitle": "Tree from object app should have 2 <li> in each <ul> in Fruits",
+              "timedOut": null,
+              "duration": 459,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Red').haveChildren(2);\ncy.contains('Yellow').haveChildren(2);",
+              "err": {},
+              "uuid": "ba7992d0-ff27-45db-a533-4af68959aca1",
+              "parentUUID": "2e466647-f3de-400d-8de0-dd6da0b8dc79",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "shouldn't have <ul> elements in 3rd children",
+              "fullTitle": "Tree from object app shouldn't have <ul> elements in 3rd children",
+              "timedOut": null,
+              "duration": 343,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Cherry').children().should('have.length', 0);\ncy.contains('Banana').children().should('have.length', 0);\ncy.contains('Wine').children().should('have.length', 0);",
+              "err": {},
+              "uuid": "e49790b4-e8b9-49e7-ae49-32daf112aa90",
+              "parentUUID": "2e466647-f3de-400d-8de0-dd6da0b8dc79",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "50cbca44-dfca-4587-9cd3-8618061affa4",
+            "fdbec013-55f5-40ac-9c6a-512fdf29522a",
+            "5f20f808-f067-4c0b-9e65-03a3bd1b1d82",
+            "ba7992d0-ff27-45db-a533-4af68959aca1",
+            "e49790b4-e8b9-49e7-ae49-32daf112aa90"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2277,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "raw_reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}
