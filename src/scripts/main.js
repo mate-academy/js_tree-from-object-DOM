@@ -21,8 +21,9 @@ const food = {
 const tree = document.querySelector('#tree');
 
 function createTree(element, data) {
+  const ul = document.createElement('ul');
+
   for (const key in data) {
-    const ul = document.createElement('ul');
     const li = document.createElement('li');
 
     li.innerText = key;
