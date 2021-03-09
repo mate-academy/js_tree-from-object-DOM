@@ -29,7 +29,7 @@ function createTree(element, data) {
     item.innerText = key;
     list.append(item);
 
-    if (typeof data[key] === 'object') {
+    if (data[key]) {
       createTree(item, data[key]);
     }
     element.append(list);
