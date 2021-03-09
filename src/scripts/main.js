@@ -26,21 +26,15 @@ function createTree(element, data) {
 }
 
 function createTreeDom(data) {
-  if (!Object.keys(data).length) {
-    return;
-  }
-
   const ul = document.createElement('ul');
 
   for (const key in data) {
     const li = document.createElement('li');
 
-    li.innerHTML = key;
+    li.innerText = key;
 
-    const childrenUl = createTreeDom(data[key]);
-
-    if (childrenUl) {
-      li.append(childrenUl);
+    if (Object.keys(data[key]).length) {
+      li.append(createTreeDom(data[key]));
     }
 
     ul.append(li);
