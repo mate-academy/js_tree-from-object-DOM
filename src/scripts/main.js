@@ -23,17 +23,17 @@ const tree = document.querySelector('#tree');
 
 function createTree(element, data) {
   if (Object.keys(element).length !== 0) {
-    const protoUl = document.createElement('ul');
+    const newList = document.createElement('ul');
 
     for (const key in element) {
-      const protoLi = document.createElement('li');
+      const newListItem = document.createElement('li');
 
-      data.append(protoUl);
-      protoUl.append(protoLi);
-      protoLi.textContent = key;
+      data.append(newList);
+      newList.append(newListItem);
+      newListItem.textContent = key;
 
       if (Object.keys(element[key]).length !== 0) {
-        createTree(element[key], protoLi);
+        createTree(element[key], newListItem);
       }
     }
   }
