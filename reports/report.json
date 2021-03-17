@@ -1,0 +1,186 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-03-10T09:51:31.059Z",
+    "end": "2021-03-10T09:51:31.894Z",
+    "duration": 753,
+    "testsRegistered": 5,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 4,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "821ef060-cf98-42f2-a44d-88eaa1e79785",
+      "title": "",
+      "fullFile": "cypress\\integration\\treeFromObject.spec.js",
+      "file": "cypress\\integration\\treeFromObject.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fc1453b8-1628-4123-945f-5211bb07189a",
+          "title": "Tree from object app",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should have 1 unordered list with 2 list items",
+              "fullTitle": "Tree from object app should have 1 unordered list with 2 list items",
+              "timedOut": null,
+              "duration": 753,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#tree').haveChildren(2);",
+              "err": {
+                "message": "TypeError: The following error originated from your application code, not from Cypress.\n\n  > Cannot convert undefined or null to object\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Tree from object app`",
+                "estack": "TypeError: The following error originated from your application code, not from Cypress.\n\n  > Cannot convert undefined or null to object\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n\nBecause this error occurred during a `before each` hook we are skipping the remaining tests in the current suite: `Tree from object app`\n    at Function.keys (<anonymous>)\n    at n (http://localhost:8080/main.a220c96c.js:2:183)\n    at Object.parcelRequire.KIzB (http://localhost:8080/main.a220c96c.js:2:367)\n    at f (http://localhost:8080/main.a220c96c.js:1:468)\n    at parcelRequire.KIzB (http://localhost:8080/main.a220c96c.js:1:771)\n    at http://localhost:8080/main.a220c96c.js:1:1023",
+                "diff": null
+              },
+              "uuid": "cb79161d-a33c-4c18-a53a-edb831d111c7",
+              "parentUUID": "fc1453b8-1628-4123-945f-5211bb07189a",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should have an <ul> with 2 list items in first list item",
+              "fullTitle": "Tree from object app should have an <ul> with 2 list items in first list item",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Drink').haveChildren(2);",
+              "err": {},
+              "uuid": "a7f96d7f-596d-464d-85fd-cb2dc8beee1f",
+              "parentUUID": "fc1453b8-1628-4123-945f-5211bb07189a",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "should have an <ul> with 2 list items in second list item",
+              "fullTitle": "Tree from object app should have an <ul> with 2 list items in second list item",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Fruit').haveChildren(2);",
+              "err": {},
+              "uuid": "850bce61-3024-4c80-90eb-dfcf94e889bc",
+              "parentUUID": "fc1453b8-1628-4123-945f-5211bb07189a",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "should have 2 <li> in each <ul> in Fruits",
+              "fullTitle": "Tree from object app should have 2 <li> in each <ul> in Fruits",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Red').haveChildren(2);\ncy.contains('Yellow').haveChildren(2);",
+              "err": {},
+              "uuid": "97cc146d-58b9-4e05-92b5-a4d47ad97816",
+              "parentUUID": "fc1453b8-1628-4123-945f-5211bb07189a",
+              "isHook": false,
+              "skipped": true
+            },
+            {
+              "title": "shouldn't have <ul> elements in 3rd children",
+              "fullTitle": "Tree from object app shouldn't have <ul> elements in 3rd children",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Cherry').children().should('have.length', 0);\ncy.contains('Banana').children().should('have.length', 0);\ncy.contains('Wine').children().should('have.length', 0);",
+              "err": {},
+              "uuid": "6e143fcd-2007-4f31-a29c-dca8b7e550f3",
+              "parentUUID": "fc1453b8-1628-4123-945f-5211bb07189a",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "cb79161d-a33c-4c18-a53a-edb831d111c7"
+          ],
+          "pending": [],
+          "skipped": [
+            "a7f96d7f-596d-464d-85fd-cb2dc8beee1f",
+            "850bce61-3024-4c80-90eb-dfcf94e889bc",
+            "97cc146d-58b9-4e05-92b5-a4d47ad97816",
+            "6e143fcd-2007-4f31-a29c-dca8b7e550f3"
+          ],
+          "duration": 753,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "raw_reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
