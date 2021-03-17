@@ -22,20 +22,19 @@ const food = {
 const tree = document.querySelector('#tree');
 
 function createTree(element, data) {
-  if (Object.keys(element).length !== 0) {
-    const newList = document.createElement('ul');
+  if (Object.keys(element).length === 0) {
+    return;
+  }
 
-    for (const key in element) {
-      const newListItem = document.createElement('li');
+  const newList = document.createElement('ul');
 
-      data.append(newList);
-      newList.append(newListItem);
-      newListItem.textContent = key;
+  for (const key in element) {
+    const newListItem = document.createElement('li');
 
-      if (Object.keys(element[key]).length !== 0) {
-        createTree(element[key], newListItem);
-      }
-    }
+    data.append(newList);
+    newList.append(newListItem);
+    newListItem.textContent = key;
+    createTree(element[key], newListItem);
   }
 }
 
