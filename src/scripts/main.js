@@ -31,10 +31,7 @@ function createTree(element, data) {
     ul.append(li);
 
     if (data[item] !== {}) {
-      const newUl = document.createElement('ul');
-
-      li.append(newUl);
-      createTree(newUl, data[item]);
+      createTree(li, data[item]);
     }
   }
   element.append(ul);
