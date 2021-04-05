@@ -22,7 +22,22 @@ const food = {
 const tree = document.querySelector('#tree');
 
 function createTree(element, data) {
-  // WRITE YOUR CODE HERE
+  const ul = document.createElement('ul');
+
+  for (const item in data) {
+    const li = document.createElement('li');
+
+    li.textContent = item;
+    ul.append(li);
+
+    if (data[item] !== {}) {
+      const newUl = document.createElement('ul');
+
+      li.append(newUl);
+      createTree(newUl, data[item]);
+    }
+  }
+  element.append(ul);
 }
 
 createTree(tree, food);
