@@ -15,14 +15,27 @@ const food = {
       'Banana': {},
       'Pineapple': {},
     },
-
   },
 };
 
 const tree = document.querySelector('#tree');
 
 function createTree(element, data) {
-  // WRITE YOUR CODE HERE
+  if (Object.keys(data).length === 0) {
+    return;
+  }
+
+  const list = document.createElement('ul');
+
+  element.appendChild(list);
+
+  for (const key in data) {
+    const item = document.createElement('li');
+
+    item.textContent = key;
+    list.appendChild(item);
+    createTree(item, data[key]);
+  }
 }
 
 createTree(tree, food);
