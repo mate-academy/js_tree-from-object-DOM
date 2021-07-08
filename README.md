@@ -1,4 +1,4 @@
-1. Replace `<your_account>` with your Github username in the link
+1. Replace `<Andrij-Nalyvayko>` with your Github username in the link
     - [DEMO LINK](https://<your_account>.github.io/js_tree-from-object-DOM/)
 2. Follow [this instructions](https://github.com/mate-academy/js_task-DOM-guideline)
     - Run `npm run test` command to test your code;
