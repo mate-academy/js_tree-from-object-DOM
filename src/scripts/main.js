@@ -30,12 +30,11 @@ function createTree(element, data) {
     const listItem = document.createElement('li');
 
     listItem.innerText = key;
+    list.append(listItem);
 
     if (Object.keys(data[key]).length !== 0) {
       createTree(listItem, data[key]);
     }
-
-    list.append(listItem);
   }
 }
 
