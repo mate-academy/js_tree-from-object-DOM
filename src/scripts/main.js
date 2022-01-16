@@ -38,7 +38,7 @@ function createTree(element, data) {
     listItem.textContent = key;
 
     if (!isEmpty(data[key])) {
-      createTree(listItem, { ...data[key] });
+      createTree(listItem, data[key]);
     }
 
     list.append(listItem);
