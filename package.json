@@ -38,7 +38,9 @@
     "stylelint-config-recommended-scss": "^3.3.0",
     "stylelint-scss": "^3.18.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "jest": "^27.5.1"
+  },
   "mateAcademy": {
     "projectType": "layoutDOM"
   }
