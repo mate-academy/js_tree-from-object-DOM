@@ -22,10 +22,9 @@ const food = {
 const tree = document.querySelector('#tree');
 
 function createTree(element, data) {
-
   let nestedList;
+
   if (Object.keys(data).length > 0) {
-    console.log('Creating ul')
     nestedList = document.createElement('ul');
     element.append(nestedList);
   }
@@ -33,7 +32,9 @@ function createTree(element, data) {
   for (const elem in data) {
     if (data[elem]) {
       const nestedItem = document.createElement('li');
+
       nestedItem.textContent = elem;
+
       nestedList.append(nestedItem);
       createTree(nestedItem, data[elem]);
     }
@@ -41,4 +42,3 @@ function createTree(element, data) {
 }
 
 createTree(tree, food);
-
