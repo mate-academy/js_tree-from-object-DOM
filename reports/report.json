@@ -1,0 +1,201 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 0,
+    "pending": 0,
+    "failures": 5,
+    "start": "2022-03-29T16:53:02.934Z",
+    "end": "2022-03-29T16:53:25.654Z",
+    "duration": 22494,
+    "testsRegistered": 5,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ea409f74-95a3-49be-ac32-402fb79e8bd4",
+      "title": "",
+      "fullFile": "cypress/integration/treeFromObject.spec.js",
+      "file": "cypress/integration/treeFromObject.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2abd90fa-fd36-42aa-9e8b-53a167640faf",
+          "title": "Tree from object app",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should have 1 unordered list with 2 list items",
+              "fullTitle": "Tree from object app should have 1 unordered list with 2 list items",
+              "timedOut": null,
+              "duration": 4917,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#tree').haveChildren(2);",
+              "err": {
+                "message": "AssertionError: Timed out retrying: Expected to find element: ``, but never found it. Queried from element: <section#tree>",
+                "estack": "AssertionError: Timed out retrying: Expected to find element: ``, but never found it. Queried from element: <section#tree>\n    at Context.eval (http://localhost:8080/__cypress/tests?p=cypress/integration/treeFromObject.spec.js:102:20)",
+                "diff": null
+              },
+              "uuid": "95b693b2-f08f-4ae6-91a0-3b2683c5d0f9",
+              "parentUUID": "2abd90fa-fd36-42aa-9e8b-53a167640faf",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should have an <ul> with 2 list items in first list item",
+              "fullTitle": "Tree from object app should have an <ul> with 2 list items in first list item",
+              "timedOut": null,
+              "duration": 4439,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Drink').haveChildren(2);",
+              "err": {
+                "message": "AssertionError: Timed out retrying: Expected to find content: 'Drink' but never did.",
+                "estack": "AssertionError: Timed out retrying: Expected to find content: 'Drink' but never did.\n    at Context.eval (http://localhost:8080/__cypress/tests?p=cypress/integration/treeFromObject.spec.js:112:8)",
+                "diff": null
+              },
+              "uuid": "d870d272-7551-4414-af2a-daabe13695fd",
+              "parentUUID": "2abd90fa-fd36-42aa-9e8b-53a167640faf",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should have an <ul> with 2 list items in second list item",
+              "fullTitle": "Tree from object app should have an <ul> with 2 list items in second list item",
+              "timedOut": null,
+              "duration": 4384,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Fruit').haveChildren(2);",
+              "err": {
+                "message": "AssertionError: Timed out retrying: Expected to find content: 'Fruit' but never did.",
+                "estack": "AssertionError: Timed out retrying: Expected to find content: 'Fruit' but never did.\n    at Context.eval (http://localhost:8080/__cypress/tests?p=cypress/integration/treeFromObject.spec.js:115:8)",
+                "diff": null
+              },
+              "uuid": "6d5c59b3-e161-4530-af06-57eee53e26c9",
+              "parentUUID": "2abd90fa-fd36-42aa-9e8b-53a167640faf",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should have 2 <li> in each <ul> in Fruits",
+              "fullTitle": "Tree from object app should have 2 <li> in each <ul> in Fruits",
+              "timedOut": null,
+              "duration": 4371,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Red').haveChildren(2);\ncy.contains('Yellow').haveChildren(2);",
+              "err": {
+                "message": "AssertionError: Timed out retrying: Expected to find content: 'Red' but never did.",
+                "estack": "AssertionError: Timed out retrying: Expected to find content: 'Red' but never did.\n    at Context.eval (http://localhost:8080/__cypress/tests?p=cypress/integration/treeFromObject.spec.js:118:8)",
+                "diff": null
+              },
+              "uuid": "a4d3d292-25dd-47c2-ac1f-f96112ef27fd",
+              "parentUUID": "2abd90fa-fd36-42aa-9e8b-53a167640faf",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "shouldn't have <ul> elements in 3rd children",
+              "fullTitle": "Tree from object app shouldn't have <ul> elements in 3rd children",
+              "timedOut": null,
+              "duration": 4383,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Cherry').children().should('have.length', 0);\ncy.contains('Banana').children().should('have.length', 0);\ncy.contains('Wine').children().should('have.length', 0);",
+              "err": {
+                "message": "AssertionError: Timed out retrying: Expected to find content: 'Cherry' but never did.",
+                "estack": "AssertionError: Timed out retrying: Expected to find content: 'Cherry' but never did.\n    at Context.eval (http://localhost:8080/__cypress/tests?p=cypress/integration/treeFromObject.spec.js:122:8)",
+                "diff": null
+              },
+              "uuid": "662f79f1-2bc5-4e60-a3fa-10faefc41065",
+              "parentUUID": "2abd90fa-fd36-42aa-9e8b-53a167640faf",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "95b693b2-f08f-4ae6-91a0-3b2683c5d0f9",
+            "d870d272-7551-4414-af2a-daabe13695fd",
+            "6d5c59b3-e161-4530-af06-57eee53e26c9",
+            "a4d3d292-25dd-47c2-ac1f-f96112ef27fd",
+            "662f79f1-2bc5-4e60-a3fa-10faefc41065"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 22494,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "raw_reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}
