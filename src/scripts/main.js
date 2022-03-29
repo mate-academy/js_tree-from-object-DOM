@@ -37,6 +37,5 @@ function createTree(element, data) {
   }
   element.append(list);
 }
-}
 
 createTree(tree, food);
