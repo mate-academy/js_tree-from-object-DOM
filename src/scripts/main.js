@@ -25,14 +25,19 @@ function createTree(element, data) {
   const list = document.createElement('ul');
 
   for (const key in data) {
-    if (data[key]) {
-      const item = document.createElement('li');
+    const item = document.createElement('li');
 
-      item.textContent = key;
-      list.append(item);
+    item.innerText = key;
+    list.append(item);
+
+    if (typeof data[key] === 'object') {
       createTree(item, data[key]);
     }
-  }
+
+    element.append(list);
+  };
+
+  return element;
 }
 
 createTree(tree, food);
