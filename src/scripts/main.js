@@ -41,5 +41,3 @@ function createTree(element, data) {
 }
 
 createTree(tree, food);
-
-createTree(tree, food);
