@@ -29,6 +29,11 @@ function createTree(element, data) {
 
     listItem.innerText = key;
     list.append(listItem);
+
+    if (Object.keys(data[key]).length === 0) {
+      continue;
+    }
+
     createTree(list, data[key]);
   }
 
