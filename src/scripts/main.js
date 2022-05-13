@@ -24,12 +24,12 @@ const tree = document.querySelector('#tree');
 function createTree(element, data) {
   const list = document.createElement('ul');
 
-  element.append(list);
-
   for (const key in data) {
     const item = document.createElement('li');
 
     item.textContent = key;
+
+    element.append(list);
     list.append(item);
 
     if (typeof data[key] === 'object') {
