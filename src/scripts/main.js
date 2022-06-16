@@ -27,18 +27,13 @@ function createTree(element, data) {
   element.append(elemUl);
 
   for (const key in data) {
+    const elemLi = document.createElement('li');
+
+    elemLi.textContent = key;
+    elemUl.append(elemLi);
+
     if (typeof data[key] === 'object' && data[key] !== null) {
-      const elemLi = document.createElement('li');
-
-      elemLi.textContent = key;
-      elemUl.append(elemLi);
-
       createTree(elemUl, data[key]);
-    } else {
-      const elemLi = document.createElement('li');
-
-      elemLi.textContent = key;
-      elemUl.append(elemLi);
     }
   }
 }
