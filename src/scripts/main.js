@@ -26,12 +26,10 @@ function createTree(element, data) {
   const list = document.createElement('ul');
 
   for (const key in data) {
-    if (!data.length) {
-      list.innerHTML += `
-      <li>${key}</li>
-      `;
-      element.append(list);
-    }
+    list.innerHTML += `
+    <li>${key}</li>
+    `;
+    element.append(list);
     createTree(list, data[key]);
   };
 }
