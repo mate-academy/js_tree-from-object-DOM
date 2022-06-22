@@ -34,7 +34,7 @@ function createTree(element, data) {
     li.textContent = value;
     list.append(li);
 
-    createTree(list, data[value]);
+    createTree(li, data[value]);
   }
 }
 
