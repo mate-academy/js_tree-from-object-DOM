@@ -33,7 +33,7 @@ function createTree(element, data) {
     } else {
       const ul = document.createElement('ul');
 
-      li.append(ul);
+      element.append(ul);
       createTree(ul, data[key]);
     }
   }
