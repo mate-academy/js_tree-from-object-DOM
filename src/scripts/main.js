@@ -29,7 +29,7 @@ function createTree(element, data) {
 
     li.textContent = key;
 
-    if (Object.keys(value)) {
+    if (Object.keys(value).length) {
       createTree(li, value);
     }
 
