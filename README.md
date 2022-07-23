@@ -7,7 +7,7 @@
 
 # Tree from object
 Write a function `createTree(element, data)` that creates a nested list of `ul/li` from an object. 
-Use keys as list items. 
+Use keys as list items
 
 `element` - is a DOM element
 
