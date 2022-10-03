@@ -24,19 +24,21 @@ const tree = document.querySelector('#tree');
 function createTree(element, data) {
   const list = document.createElement('ul');
 
-  for (const keys in data) {
+  const createLi = (key) => {
     list.innerHTML += `
-      <li id = "${keys}">
-        ${keys}
+      <li id = "${key}">
+        ${key}
       </li>
     `;
-  }
+  };
+
+  Object.keys(data).forEach(createLi);
 
   element.append(list);
 
-  for (const keys in data) {
-    if (Object.keys(data[`${keys}`]).length !== 0) {
-      createTree(document.querySelector(`#${keys}`), data[`${keys}`]);
+  for (const item in data) {
+    if (Object.keys(data[`${item}`]).length !== 0) {
+      createTree(document.querySelector(`#${item}`), data[`${item}`]);
     }
   }
 }
