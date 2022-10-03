@@ -26,7 +26,7 @@ function createTree(element, data) {
 
   element.append(list);
 
-  for (const item in data) {
+  const createLi = (item) => {
     list.innerHTML += `
       <li id = "${item}">
         ${item}
@@ -36,7 +36,9 @@ function createTree(element, data) {
     if (Object.keys(data[`${item}`]).length !== 0) {
       createTree(document.querySelector(`#${item}`), data[`${item}`]);
     }
-  }
+  };
+
+  Object.keys(data).forEach(createLi);
 }
 
 createTree(tree, food);
