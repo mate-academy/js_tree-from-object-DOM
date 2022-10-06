@@ -2,8 +2,8 @@
 
 const food = {
   'Drink': {
-    'Wine': {},
-    'Schnaps': {},
+    'Wine': 3,
+    'Schnaps': 5,
   },
 
   'Fruit': {
@@ -15,14 +15,29 @@ const food = {
       'Banana': {},
       'Pineapple': {},
     },
-
   },
 };
 
-const tree = document.querySelector('#tree');
+const newTag = (tag) => document.createElement(`${tag}`);
 
 function createTree(element, data) {
-  // WRITE YOUR CODE HERE
-}
+  const list = newTag('ul');
+
+  Object.keys(data).map((key) => {
+    const listItem = newTag('li');
+
+    listItem.innerText = key;
+
+    if (typeof data[key] === 'object') {
+      createTree(listItem, data[key]);
+    }
+
+    list.append(listItem);
+  });
+
+  element.append(list);
+};
+
+const tree = document.querySelector('#tree');
 
 createTree(tree, food);
