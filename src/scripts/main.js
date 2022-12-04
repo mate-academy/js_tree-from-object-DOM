@@ -36,7 +36,7 @@ function createTree(data, element) {
   };
 
   for (const [key, value] of Object.entries(data)) {
-    if (Object.keys(value).length > 0) {
+    if (typeof value === 'object') {
       const list = appendElement(key, element);
 
       createTree(value, list);
