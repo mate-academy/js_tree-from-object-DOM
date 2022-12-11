@@ -31,10 +31,6 @@ function createTree(element, data) {
 
     if (Object.keys(data[key]).length !== 0) {
       createTree(liElem, data[key]);
-    // } else {
-    //   // ulElem.appendChild(liElem);
-    //   // createTree(liElem, data[key]);
-    // }
     }
   }
 
