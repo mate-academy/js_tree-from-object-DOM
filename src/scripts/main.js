@@ -1,7 +1,5 @@
 'use strict';
 
-// const { Linter } = require("eslint");
-
 const food = {
   'Drink': {
     'Wine': {},
