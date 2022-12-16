@@ -25,16 +25,13 @@ function createTree(element, data) {
   element.insertAdjacentHTML('beforeend', `<ul></ul>`);
 
   for (const oneObj in data) {
-    if (Object.entries(data[oneObj]).length === 0) {
-      element.lastElementChild.insertAdjacentHTML('beforeend', `
-          <li>${oneObj}</li>
-      `);
-    } else {
-      element.lastElementChild.insertAdjacentHTML('beforeend', `
-        <li>
-          ${oneObj}
-        </li>
-      `);
+    element.lastElementChild.insertAdjacentHTML('beforeend', `
+      <li>
+        ${oneObj}
+      </li>
+    `);
+
+    if (Object.entries(data[oneObj]).length !== 0) {
       createTree(element.lastElementChild.lastElementChild, data[oneObj]);
     }
   }
