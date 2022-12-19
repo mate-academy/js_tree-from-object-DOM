@@ -32,7 +32,7 @@ function createTree(element, data) {
     createTree(li, data[`${key}`]);
     ul.append(li);
   }
-  element.append(ul);
+  element.appendChild(ul);
 }
 
 createTree(tree, food);
