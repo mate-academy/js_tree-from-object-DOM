@@ -29,7 +29,7 @@ function createTree(element, data) {
     item.innerText = key;
     list.append(item);
     element.append(list);
-    createTree(list, data[key]);
+    createTree(item, data[key]);
   }
 }
 
