@@ -22,7 +22,7 @@ const food = {
 const tree = document.querySelector('#tree');
 
 function createTree(element, data) {
-  function createTreeDom(obj) {
+  function rec(obj) {
     const ul = document.createElement('ul');
 
     for (const key in obj) {
@@ -30,7 +30,7 @@ function createTree(element, data) {
 
       listItem.innerHTML = key;
 
-      const childrenUl = createTreeDom(obj[key]);
+      const childrenUl = rec(obj[key]);
 
       listItem.append(childrenUl);
       ul.append(listItem);
@@ -39,7 +39,7 @@ function createTree(element, data) {
     return ul;
   }
 
-  element.append(createTreeDom(data));
+  element.append(rec(data));
 }
 
 createTree(tree, food);
