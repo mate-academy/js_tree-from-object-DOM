@@ -27,7 +27,6 @@ function createTree(element, data) {
   element.append(ul);
 
   for (const el in data) {
-    // console.log(data[el]);
     const li = document.createElement('li');
 
     li.textContent = el;
