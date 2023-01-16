@@ -29,7 +29,7 @@ function createTree(element, data) {
 
     element.append(listItem);
 
-    if (Object.keys(data[key]).length !== 0) {
+    if (Object.keys(data[key]).length) {
       const list = document.createElement('ul');
 
       createTree(list, data[key]);
