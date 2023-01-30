@@ -26,7 +26,7 @@ function createTree(element, data) {
 
   element.append(ul);
 
-  if (typeof data === 'object' && Object.keys(data).length !== 0) {
+  if (typeof data === 'object' && !!Object.keys(data).length) {
     for (const key in data) {
       const li = document.createElement('li');
 
