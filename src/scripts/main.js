@@ -26,13 +26,13 @@ function createTree(element, data) {
 
   const list = element.lastChild;
 
-  for (const d in data) {
-    list.insertAdjacentHTML('beforeend', `<li>${d}</li>`);
+  for (const key in data) {
+    list.insertAdjacentHTML('beforeend', `<li>${key}</li>`);
 
     const listInside = list.lastChild;
 
-    if (Object.keys(data[d]).length !== 0) {
-      createTree(listInside, data[d]);
+    if (Object.keys(data[key]).length) {
+      createTree(listInside, data[key]);
     }
   }
 }
