@@ -15,7 +15,6 @@ const food = {
       'Banana': {},
       'Pineapple': {},
     },
-
   },
 };
 
@@ -28,9 +27,8 @@ function createTree(element, data) {
     const item = document.createElement('li');
 
     item.textContent = key;
-    // if (typeof data[key] === 'object') {
 
-    if (Object.keys(data[key]).length !== 0) {
+    if (Object.keys(data[key]).length) {
       createTree(item, data[key]);
     }
     list.append(item);
