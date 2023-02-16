@@ -21,8 +21,18 @@ const food = {
 
 const tree = document.querySelector('#tree');
 
+function createElement(obj) {
+  let list = '';
+
+  for (const key in obj) {
+    list += `<li>${key}${createElement(obj[key])}</li>`;
+  }
+
+  return list ? `<ul>${list}</ul>` : '';
+}
+
 function createTree(element, data) {
-  // WRITE YOUR CODE HERE
+  element.innerHTML = createElement(data);
 }
 
 createTree(tree, food);
