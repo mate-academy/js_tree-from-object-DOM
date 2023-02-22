@@ -26,18 +26,18 @@ function createTree(element, data) {
     return;
   }
 
-  const ul = document.createElement('ul');
+  const list = document.createElement('ul');
 
   for (const key in data) {
-    const li = document.createElement('li');
+    const listItem = document.createElement('li');
 
-    li.insertAdjacentHTML('beforeend', `${key}`);
+    listItem.insertAdjacentHTML('beforeend', `${key}`);
 
-    createTree(li, data[key]);
-    ul.append(li);
+    createTree(listItem, data[key]);
+    list.append(listItem);
   }
 
-  element.append(ul);
+  element.append(list);
 }
 
 createTree(tree, food);
