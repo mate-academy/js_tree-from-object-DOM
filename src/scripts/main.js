@@ -29,7 +29,7 @@ function getNestedObjects(data) {
 
     item.textContent = key;
 
-    if (JSON.stringify(data[key]) !== '{}') {
+    if (Object.keys(data[key]).length) {
       const listChildren = getNestedObjects(data[key]);
 
       item.append(listChildren);
