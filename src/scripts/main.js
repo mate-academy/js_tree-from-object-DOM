@@ -22,31 +22,31 @@ const food = {
 const tree = document.querySelector('#tree');
 
 function createTree(element, data) {
-  element.innerHTML = createContent(data);
+  element.append(createContent(data));
 }
 
 function createContent(obj) {
-  let li = '';
-  let ul;
+  if (Object.keys(obj).length === 0) {
+    return;
+  }
+
+  const ul = document.createElement('ul');
 
   for (const key in obj) {
-    li += `
-      <li>
-        ${key}
-        ${createContent(obj[key])}
-      </li>
-    `;
+    const li = document.createElement('li');
+
+    li.innerText = key;
+
+    const childrenUl = createContent(obj[key]);
+
+    if (childrenUl) {
+      li.append(childrenUl);
+    }
+
+    ul.append(li);
   }
 
-  if (li) {
-    ul = `
-      <ul>
-        ${li}
-      </ul>
-    `;
-  }
-
-  return ul || '';
+  return ul;
 }
 
 createTree(tree, food);
