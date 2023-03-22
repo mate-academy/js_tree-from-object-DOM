@@ -31,7 +31,9 @@ function createTree(element, data) {
 
     list.append(item);
 
-    createTree(item, data[text]);
+    if (data[text]) {
+      createTree(item, data[text]);
+    }
   }
 
   element.append(list);
