@@ -32,7 +32,7 @@ function createTree(element, data) {
 
     createTree(li, data[key]);
     element.append(ul);
-  }
-}
+  };
+};
 
 createTree(tree, food);
