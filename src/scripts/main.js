@@ -33,14 +33,8 @@ function createTree(element, data) {
 
     li.textContent = key;
 
-    for (const item in createTree(li, data[key])) {
-      const ul2 = document.createElement('ul');
-      const li2 = document.createElement('li');
-
-      li.append(ul2);
-      ul2.append(li2);
-
-      li2.textContent = item;
+    if (data[key]) {
+      createTree(li, data[key]);
     }
   }
 }
