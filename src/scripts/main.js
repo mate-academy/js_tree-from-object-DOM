@@ -28,13 +28,13 @@ function createTree(element, data) {
 
   for (const key of Object.keys(data)) {
     const li = document.createElement('li');
+    ul.appendChild(li);
 
     if (typeof data[key] === 'object') {
       li.textContent = key;
-      createTree(li, data[key]);
+      createTree(ul, data[key]);
     }
 
-    ul.appendChild(li);
   }
 }
 
