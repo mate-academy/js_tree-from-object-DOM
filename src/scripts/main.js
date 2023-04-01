@@ -30,8 +30,8 @@ function createTree(element, data) {
     li.innerHTML = key;
     item.append(li);
 
-    if (typeof data[key] === 'object') {
-      createTree(item, data[key]);
+    if (Object.keys(data[key]).length > 0) {
+      createTree(li, data[key]);
     }
   }
 
