@@ -22,44 +22,20 @@ const food = {
 const tree = document.querySelector('#tree');
 
 function createTree(element, data) {
-  const arrOfFood = Object.keys(data);
   const wrap = document.createElement('ul');
 
-  for (const f of arrOfFood) {
-    const arrSubItems = Object.keys(data[f]);
-    const foodItem = document.createElement('li');
+  for (const key in data) {
+    const item = document.createElement('li');
 
-    foodItem.textContent = f;
-    wrap.appendChild(foodItem);
+    item.textContent = key;
+    wrap.appendChild(item);
 
-    const subItemWrap = document.createElement('ul');
-
-    foodItem.appendChild(subItemWrap);
-
-    for (const i of arrSubItems) {
-      const subFoodItem = document.createElement('li');
-
-      subFoodItem.textContent = i;
-      subItemWrap.appendChild(subFoodItem);
-
-      if (Object.keys(data[f][i]).length > 0) {
-        const lastArr = Object.keys(data[f][i]);
-
-        for (const item of lastArr) {
-          const lastArrWrap = document.createElement('ul');
-
-          subFoodItem.appendChild(lastArrWrap);
-
-          const lastItem = document.createElement('li');
-
-          lastItem.textContent = item;
-          lastArrWrap.appendChild(lastItem);
-        };
-      }
+    if (Object.keys(data[key]).length > 0) {
+      item.appendChild(createTree(document.createElement('ul'), data[key]));
     }
-  };
+  }
 
-  return tree.appendChild(wrap);
+  return element.appendChild(wrap);
 }
 
 createTree(tree, food);
