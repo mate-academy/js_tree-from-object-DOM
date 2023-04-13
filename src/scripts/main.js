@@ -27,12 +27,11 @@ function createTree(element, data) {
     const li = document.createElement('li');
 
     li.innerText = key;
+    ul.append(li);
 
-    if (Object.keys(Object.keys(data)).length > 0) {
+    if (Object.keys(data).length !== 0) {
       createTree(li, data[key]);
     }
-
-    ul.append(li);
   }
 
   element.append(ul);
