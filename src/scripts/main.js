@@ -28,13 +28,9 @@ function createTree(element, data) {
 
     li.innerText = key;
     ul.append(li);
-
-    if (Object.keys(data).length !== 0) {
-      createTree(li, data[key]);
-    }
+    createTree(li, data[key]);
+    element.append(ul);
   }
-
-  element.append(ul);
 }
 
 createTree(tree, food);
