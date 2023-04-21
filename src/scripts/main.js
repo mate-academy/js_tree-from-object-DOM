@@ -24,10 +24,10 @@ function createTree(element, data) {
   const list = document.createElement('ul');
 
   for (const key in data) {
-    if (typeof (data[key]) === 'object') {
+    if (data[key]) {
       const part = document.createElement('li');
 
-      part.innerHTML = key;
+      part.innerText = key;
       list.append(part);
       element.append(list);
       createTree(list, data[key]);
