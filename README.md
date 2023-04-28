@@ -1,1 +1,1 @@
-[DEMO LINK](https://<your_account>.github.io/js_tree-from-object-DOM/)
+[DEMO LINK](https://kirillmaslov.github.io/js_tree-from-object-DOM/)
