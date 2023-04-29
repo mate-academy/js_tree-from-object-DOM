@@ -35,7 +35,7 @@ function createTree(element, data) {
 
     const keys = Object.keys(data[key]);
 
-    if (keys) {
+    if (keys.length) {
       createTree(list, data[key]);
     }
   }
