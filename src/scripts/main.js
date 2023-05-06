@@ -36,8 +36,6 @@ function createTree(element, data) {
     }
     ul.appendChild(li);
   };
-
-  // WRITE YOUR CODE HERE
 }
 
 createTree(tree, food);
