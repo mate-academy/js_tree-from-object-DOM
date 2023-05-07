@@ -24,7 +24,7 @@ const tree = document.querySelector('#tree');
 function createTree(element, data) {
   for (const key in data) {
     const ul = document.createElement('ul');
-    const li = document.cteateElement('li');
+    const li = document.createElement('li');
 
     li.textContent = key;
     ul.append(li);
