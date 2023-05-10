@@ -1,46 +1,41 @@
 'use strict';
 
-document.addEventListener('DOMContentLoaded', function() {
-  const food = {
-    'Drink': {
-      'Wine': {},
-      'Schnaps': {},
+const food = {
+  'Drink': {
+    'Wine': {},
+    'Schnaps': {},
+  },
+
+  'Fruit': {
+    'Red': {
+      'Cherry': {},
+      'Strawberry': {},
+    },
+    'Yellow': {
+      'Banana': {},
+      'Pineapple': {},
     },
 
-    'Fruit': {
-      'Red': {
-        'Cherry': {},
-        'Strawberry': {},
-      },
-      'Yellow': {
-        'Banana': {},
-        'Pineapple': {},
-      },
+  },
+};
 
-    },
-  };
+const tree = document.querySelector('#tree');
 
-  const tree = document.querySelector('#tree');
+function createTree(element, data) {
+  const list = document.createElement('ul');
 
-  function createTree(element, data) {
-    const ul = document.createElement('ul');
+  for (const key in data) {
+    const item = document.createElement('li');
 
-    for (const key in data) {
-      const li = document.createElement('li');
+    item.textContent = key;
+    list.append(item);
 
-      li.textContent = key;
-
-      if (typeof data[key] === 'object') {
-        li.appendChild(createTree(element, data[key]));
-      }
-
-      ul.appendChild(li);
+    if (typeof data[key] === 'object') {
+      createTree(item, data[key]);
     }
-
-    return ul;
   }
 
-  const root = createTree(tree, food);
+  element.append(list);
+}
 
-  tree.appendChild(root);
-});
+createTree(tree, food);
