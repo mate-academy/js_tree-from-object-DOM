@@ -35,9 +35,7 @@ function createTree(element, data) {
     rootListItem.innerText = key;
     rootList.appendChild(rootListItem);
 
-    if (data[key] !== undefined) {
-      createTree(rootListItem, data[key]);
-    }
+    createTree(rootListItem, data[key]);
   }
 
   element.appendChild(rootList);
