@@ -36,7 +36,7 @@ function createTree(element, data) {
     list.append(item);
   }
 
-  element.append('list');
+  element.append(list);
 }
 
 createTree(tree, food);
