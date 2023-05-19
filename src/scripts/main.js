@@ -20,24 +20,6 @@ const food = {
   },
 };
 
-// <ul>
-//   <li>Drink</li>
-//   <ul>
-//      <li>Wine</li>
-//      <li>Schnaps</li>
-//   </ul>
-// </ul>
-// <ul>
-//   <li>Fruit</li>
-//   <ul>
-//      <li>Red</li>
-//      <ul>
-//        <li>Cherry</li>
-//        <li>Strawberry</li>
-//      </ul>
-//   </ul>
-// </ul>
-
 const tree = document.querySelector('#tree');
 
 function createTree(element, data) {
