@@ -26,7 +26,7 @@ function createTree(element, data) {
 
   element.appendChild(ul);
 
-  Object.keys(data).map(key => {
+  Object.keys(data).forEach(key => {
     const li = document.createElement('li');
 
     li.textContent = key;
