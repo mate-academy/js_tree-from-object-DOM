@@ -29,7 +29,7 @@ function createTree(element, data) {
 
     li.textContent = key;
 
-    if (Object.keys(data[key].length > 0)) {
+    if (Object.keys(data[key]).length > 0) {
       const nestedEl = createTree(li, data[key]);
 
       li.append(nestedEl);
@@ -38,7 +38,7 @@ function createTree(element, data) {
     ul.append(li);
   }
 
-  tree.append(ul);
+  element.append(ul);
 
   return ul;
 }
