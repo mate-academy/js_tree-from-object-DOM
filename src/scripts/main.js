@@ -29,9 +29,9 @@ function createTree(element, data) {
 
     listItem.textContent = key;
     list.appendChild(listItem);
-    element.appendChild(list);
     createTree(listItem, data[key]);
   }
+  element.appendChild(list);
 }
 
 createTree(tree, food);
