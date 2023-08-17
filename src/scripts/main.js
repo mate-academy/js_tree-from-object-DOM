@@ -25,7 +25,7 @@ function createTree(element, data) {
   const dataKeys = Object.keys(data);
   const ul = document.createElement('ul');
 
-  if (dataKeys.length) {
+  if (!dataKeys.length) {
     return;
   }
 
