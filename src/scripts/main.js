@@ -29,9 +29,7 @@ function createTree(element, data) {
 
     item.textContent = branch;
 
-    if (Object.keys(branch) === 0) {
-      break;
-    } else {
+    if (Object.keys(branch) !== 0) {
       createTree(item, data[branch]);
     }
 
