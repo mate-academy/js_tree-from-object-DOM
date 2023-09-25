@@ -30,7 +30,13 @@ function createTree(element, data) {
     const li = document.createElement('li');
 
     li.textContent = key;
+
+    li.addEventListener('click', () => {
+      ul.classList.toggle('collapsed');
+    });
+
     ul.appendChild(li);
+    createTree(li, data[key]);
   });
 }
 
