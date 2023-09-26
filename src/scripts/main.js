@@ -31,10 +31,6 @@ function createTree(element, data) {
 
     li.textContent = key;
 
-    li.addEventListener('click', () => {
-      ul.classList.toggle('collapsed');
-    });
-
     ul.appendChild(li);
     createTree(li, data[key]);
   });
