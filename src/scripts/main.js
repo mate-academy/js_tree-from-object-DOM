@@ -23,59 +23,27 @@ const food = {
 const tree = document.querySelector('#tree');
 
 function createTree(element, data) {
-  const listFood = document.createElement('ul');
+  const list = document.createElement('ul');
 
-  element.append(listFood);
+  element.append(list);
 
-  Object.keys(data).forEach(product => {
-    const branch = document.createElement('li');
+  function buildBranch(parentElement, branchData) {
+    Object.keys(branchData).forEach(product => {
+      const branch = document.createElement('li');
 
-    branch.innerText = product;
-    listFood.append(branch);
-  });
+      branch.innerText = product;
+      parentElement.append(branch);
 
-  const branches = document.querySelectorAll('li');
-  const listDrink = document.createElement('ul');
-  const listFruit = document.createElement('ul');
+      if (typeof branchData[product] === 'object') {
+        const sublist = document.createElement('ul');
 
-  branches[0].append(listDrink);
+        branch.append(sublist);
+        buildBranch(sublist, branchData[product]);
+      }
+    });
+  }
 
-  Object.keys(data.Drink).forEach(product => {
-    const branch = document.createElement('li');
-
-    branch.innerText = product;
-    listDrink.append(branch);
-  });
-
-  branches[1].append(listFruit);
-
-  Object.keys(data.Fruit).forEach(product => {
-    const branch = document.createElement('li');
-
-    branch.innerText = product;
-    listFruit.append(branch);
-  });
-
-  const listRed = document.createElement('ul');
-  const listYellow = document.createElement('ul');
-
-  listFruit.childNodes[0].appendChild(listRed);
-
-  Object.keys(data.Fruit.Red).forEach(product => {
-    const branch = document.createElement('li');
-
-    branch.innerText = product;
-    listRed.append(branch);
-  });
-
-  listFruit.childNodes[1].appendChild(listYellow);
-
-  Object.keys(data.Fruit.Yellow).forEach(product => {
-    const branch = document.createElement('li');
-
-    branch.innerText = product;
-    listYellow.append(branch);
-  });
+  buildBranch(list, data);
 }
 
 createTree(tree, food);
