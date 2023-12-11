@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 const food = {
   Drink: {
@@ -18,17 +18,17 @@ const food = {
   },
 };
 
-const tree = document.querySelector('#tree');
+const tree = document.querySelector("#tree");
 
 function createTree(element, data) {
-  const ul = document.createElement('ul');
+  const ul = document.createElement("ul");
 
   for (const key in data) {
-    const li = document.createElement('li');
+    const li = document.createElement("li");
 
     li.textContent = key;
 
-    if (typeof data[key] === 'object' && Object.keys(data[key]).length > 0) {
+    if (typeof data[key] === "object" && Object.keys(data[key]).length > 0) {
       createTree(li, data[key]);
     }
 
@@ -40,8 +40,6 @@ function createTree(element, data) {
   return ul;
 }
 
-const treeElement = document.querySelector('#tree');
+const treeElement = document.querySelector("#tree");
 
 createTree(treeElement, food);
-
-createTree(tree, food);
