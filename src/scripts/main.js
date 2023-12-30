@@ -26,6 +26,7 @@ function createTree(element, data) {
 
   for (const key in data) {
     const liItem = document.createElement('li');
+
     liItem.textContent = key;
     ulList.appendChild(liItem);
 
