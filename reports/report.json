@@ -1,0 +1,198 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 5,
+    "passes": 1,
+    "pending": 0,
+    "failures": 4,
+    "start": "2024-01-15T21:01:32.819Z",
+    "end": "2024-01-15T21:01:49.906Z",
+    "duration": 17028,
+    "testsRegistered": 5,
+    "passPercent": 20,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "40d12240-f057-4d27-abcf-77ad1fce19a7",
+      "title": "",
+      "fullFile": "cypress/integration/treeFromObject.spec.js",
+      "file": "cypress/integration/treeFromObject.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "ea2ef464-54b1-42c6-8a14-0ce8e9da6ea5",
+          "title": "Tree from object app",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should have 1 unordered list with 2 list items",
+              "fullTitle": "Tree from object app should have 1 unordered list with 2 list items",
+              "timedOut": null,
+              "duration": 4278,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.get('#tree').haveChildren(2);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Too many elements found. Found '6', expected '2'.",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Too many elements found. Found '6', expected '2'.\n    at Context.eval (http://localhost:8080/__cypress/tests?p=cypress\\integration\\treeFromObject.spec.js:102:42)",
+                "diff": "- 6\n+ 2\n"
+              },
+              "uuid": "2fdfd347-e4a2-42e9-a994-a9fc8d892acd",
+              "parentUUID": "ea2ef464-54b1-42c6-8a14-0ce8e9da6ea5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should have an <ul> with 2 list items in first list item",
+              "fullTitle": "Tree from object app should have an <ul> with 2 list items in first list item",
+              "timedOut": null,
+              "duration": 4217,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Drink').haveChildren(2);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: ``, but never found it. Queried from element: <li>",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: ``, but never found it. Queried from element: <li>\n    at Context.eval (http://localhost:8080/__cypress/tests?p=cypress\\integration\\treeFromObject.spec.js:102:20)",
+                "diff": null
+              },
+              "uuid": "7a5f214b-a869-4dba-8e33-265fab148192",
+              "parentUUID": "ea2ef464-54b1-42c6-8a14-0ce8e9da6ea5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should have an <ul> with 2 list items in second list item",
+              "fullTitle": "Tree from object app should have an <ul> with 2 list items in second list item",
+              "timedOut": null,
+              "duration": 4220,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Fruit').haveChildren(2);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: ``, but never found it. Queried from element: <li>",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: ``, but never found it. Queried from element: <li>\n    at Context.eval (http://localhost:8080/__cypress/tests?p=cypress\\integration\\treeFromObject.spec.js:102:20)",
+                "diff": null
+              },
+              "uuid": "2446b7a3-09d5-4d70-ba5d-43568f506cfd",
+              "parentUUID": "ea2ef464-54b1-42c6-8a14-0ce8e9da6ea5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should have 2 <li> in each <ul> in Fruits",
+              "fullTitle": "Tree from object app should have 2 <li> in each <ul> in Fruits",
+              "timedOut": null,
+              "duration": 4219,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Red').haveChildren(2);\ncy.contains('Yellow').haveChildren(2);",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: Expected to find element: ``, but never found it. Queried from element: <li>",
+                "estack": "AssertionError: Timed out retrying after 4000ms: Expected to find element: ``, but never found it. Queried from element: <li>\n    at Context.eval (http://localhost:8080/__cypress/tests?p=cypress\\integration\\treeFromObject.spec.js:102:20)",
+                "diff": null
+              },
+              "uuid": "1ac9d193-1833-40cb-bade-555d2c2b4305",
+              "parentUUID": "ea2ef464-54b1-42c6-8a14-0ce8e9da6ea5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "shouldn't have <ul> elements in 3rd children",
+              "fullTitle": "Tree from object app shouldn't have <ul> elements in 3rd children",
+              "timedOut": null,
+              "duration": 94,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.contains('Cherry').children().should('have.length', 0);\ncy.contains('Banana').children().should('have.length', 0);\ncy.contains('Wine').children().should('have.length', 0);",
+              "err": {},
+              "uuid": "a52ad9d5-fd3c-47ba-997b-667abfedd255",
+              "parentUUID": "ea2ef464-54b1-42c6-8a14-0ce8e9da6ea5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a52ad9d5-fd3c-47ba-997b-667abfedd255"
+          ],
+          "failures": [
+            "2fdfd347-e4a2-42e9-a994-a9fc8d892acd",
+            "7a5f214b-a869-4dba-8e33-265fab148192",
+            "2446b7a3-09d5-4d70-ba5d-43568f506cfd",
+            "1ac9d193-1833-40cb-bade-555d2c2b4305"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 17028,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "raw_reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
