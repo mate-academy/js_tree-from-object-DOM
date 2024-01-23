@@ -1,21 +1,20 @@
 'use strict';
 
 const food = {
-  'Drink': {
-    'Wine': {},
-    'Schnaps': {},
+  Drink: {
+    Wine: {},
+    Schnaps: {},
   },
 
-  'Fruit': {
-    'Red': {
-      'Cherry': {},
-      'Strawberry': {},
+  Fruit: {
+    Red: {
+      Cherry: {},
+      Strawberry: {},
     },
-    'Yellow': {
-      'Banana': {},
-      'Pineapple': {},
+    Yellow: {
+      Banana: {},
+      Pineapple: {},
     },
-
   },
 };
 
@@ -27,13 +26,15 @@ function createTree(element, data) {
   element.appendChild(ul);
 
   for (const key in data) {
-    const li = document.createElement('li');
+    if (data.hasOwnProperty(key)) {
+      const li = document.createElement('li');
 
-    li.textContent(key);
-    ul.appendChild(li);
+      li.textContent = key;
+      ul.appendChild(li);
 
-    if (typeof data[key] === 'object') {
-      createTree(li, data[key]);
+      if (Object.keys(data[key]).length > 0) {
+        createTree(li, data[key]);
+      }
     }
   }
 }
