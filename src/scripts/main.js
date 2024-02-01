@@ -1,28 +1,39 @@
 'use strict';
 
 const food = {
-  'Drink': {
-    'Wine': {},
-    'Schnaps': {},
+  Drink: {
+    Wine: {},
+    Schnaps: {},
   },
 
-  'Fruit': {
-    'Red': {
-      'Cherry': {},
-      'Strawberry': {},
+  Fruit: {
+    Red: {
+      Cherry: {},
+      Strawberry: {},
     },
-    'Yellow': {
-      'Banana': {},
-      'Pineapple': {},
+    Yellow: {
+      Banana: {},
+      Pineapple: {},
     },
-
   },
 };
 
 const tree = document.querySelector('#tree');
 
-function createTree(element, data) {
-  // WRITE YOUR CODE HERE
-}
+const createTree = (element, data) => {
+  const ulElement = document.createElement('ul');
+
+  for (const keys in data) {
+    const liElement = document.createElement('li');
+
+    liElement.innerText = keys;
+    ulElement.append(liElement);
+    element.append(ulElement);
+
+    if (data[keys]) {
+      createTree(liElement, data[keys]);
+    }
+  }
+};
 
 createTree(tree, food);
