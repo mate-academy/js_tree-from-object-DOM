@@ -1,21 +1,20 @@
 'use strict';
 
 const food = {
-  'Drink': {
-    'Wine': {},
-    'Schnaps': {},
+  Drink: {
+    Wine: {},
+    Schnaps: {},
   },
 
-  'Fruit': {
-    'Red': {
-      'Cherry': {},
-      'Strawberry': {},
+  Fruit: {
+    Red: {
+      Cherry: {},
+      Strawberry: {},
     },
-    'Yellow': {
-      'Banana': {},
-      'Pineapple': {},
+    Yellow: {
+      Banana: {},
+      Pineapple: {},
     },
-
   },
 };
 
