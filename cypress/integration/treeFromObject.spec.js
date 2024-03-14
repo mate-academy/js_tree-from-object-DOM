@@ -1,11 +1,14 @@
 'use strict';
 
-Cypress.Commands.add('haveChildren', {
-  prevSubject: true,
-}, (subject, number) => {
-
-  cy.wrap(subject).children().children().should('have.length', number);
-});
+Cypress.Commands.add(
+  'haveChildren',
+  {
+    prevSubject: true,
+  },
+  (subject, number) => {
+    cy.wrap(subject).children().children().should('have.length', number);
+  },
+);
 
 describe('Tree from object app', () => {
   beforeEach(() => {
