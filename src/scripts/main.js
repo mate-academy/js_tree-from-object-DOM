@@ -1,40 +1,38 @@
 'use strict';
 
-document.addEventListener('DOMContentLoaded', function () {
-  const food = {
-    Drink: {
-      Wine: {},
-      Schnaps: {},
+const food = {
+  Drink: {
+    Wine: {},
+    Schnaps: {},
+  },
+  Fruit: {
+    Red: {
+      Cherry: {},
+      Strawberry: {},
     },
-    Fruit: {
-      Red: {
-        Cherry: {},
-        Strawberry: {},
-      },
-      Yellow: {
-        Banana: {},
-        Pineapple: {},
-      },
+    Yellow: {
+      Banana: {},
+      Pineapple: {},
     },
-  };
+  },
+};
 
-  const tree = document.querySelector('#tree');
+const tree = document.querySelector('#tree');
 
-  function createTree(element, data) {
-    const ul = document.createElement('ul');
+const createTree = (element, data) => {
+  const ulElement = document.createElement('ul');
 
-    for (const prop in data) {
-      const li = document.createElement('li');
+  for (const keys in data) {
+    const liElement = document.createElement('li');
 
-      li.innerText = prop;
-      ul.append(li);
+    liElement.innerText = keys;
+    ulElement.append(liElement);
+    element.append(ulElement);
 
-      if (Object.keys(data[prop]).length) {
-        createTree(li, data[prop]);
-      }
+    if (data[keys]) {
+      createTree(liElement, data[keys]);
     }
-    element.append(ul);
   }
+};
 
-  createTree(tree, food);
-});
+createTree(tree, food);
