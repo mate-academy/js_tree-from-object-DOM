@@ -24,11 +24,15 @@ function createTree(element, data) {
   const newUl = document.createElement('ul');
 
   for (const key in data) {
+    if (!data.hasOwnProperty(key)) {
+      continue;
+    }
+
     const newLi = document.createElement('li');
 
     newLi.textContent = key;
 
-    if (typeof data[key] === 'object') {
+    if (Object.keys(data[key]).length) {
       const nestedUl = createTree(newLi, data[key]);
 
       newLi.appendChild(nestedUl);
@@ -37,7 +41,7 @@ function createTree(element, data) {
     newUl.appendChild(newLi);
   }
 
-  if (element) {
+  if (element instanceof Element) {
     element.appendChild(newUl);
   }
 
