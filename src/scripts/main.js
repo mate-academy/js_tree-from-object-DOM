@@ -31,6 +31,7 @@ function createTree(element, data) {
 
     if (typeof data[key] === 'object' && !Array.isArray(data[key])) {
       const hasProperties = Object.keys(data[key]).length > 0;
+
       if (hasProperties) {
         createTree(li, data[key]);
       }
@@ -39,6 +40,7 @@ function createTree(element, data) {
 }
 
 const tree = document.createElement('div');
+
 tree.id = 'tree';
 
 document.body.appendChild(tree);
