@@ -1,5 +1,3 @@
-'use strict';
-
 const food = {
   Drink: {
     Wine: {},
@@ -18,10 +16,27 @@ const food = {
   },
 };
 
-const tree = document.querySelector('#tree');
+// our main element
+const tree = document.createElement('div');
+
+tree.id = 'tree';
 
 function createTree(element, data) {
-  // WRITE YOUR CODE HERE
-}
+  const ul = document.createElement('ul');
 
+  for (const [key, value] of Object.entries(data)) {
+    const li = document.createElement('li');
+
+    li.textContent = key;
+
+    if (Object.values(value).length > 0) {
+      createTree(li, value);
+    }
+
+    ul.append(li);
+  }
+
+  element.append(ul);
+}
 createTree(tree, food);
+document.body.append(tree);
