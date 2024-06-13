@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 'use strict';
 
 const food = {
@@ -18,10 +19,34 @@ const food = {
   },
 };
 
+const div = document.createElement('div');
+
+div.setAttribute('id', 'tree');
+
+const body = document.querySelector('body');
+
+body.appendChild(div);
+
 const tree = document.querySelector('#tree');
 
 function createTree(element, data) {
-  // WRITE YOUR CODE HERE
+  if (Object.keys(data).length === 0 || typeof data !== 'object') {
+    return;
+  }
+
+  const ul = document.createElement('ul');
+
+  element.appendChild(ul);
+
+  for (const item in data) {
+    const li = document.createElement('li');
+
+    li.textContent = item;
+
+    ul.appendChild(li);
+
+    createTree(li, data[item]);
+  }
 }
 
 createTree(tree, food);
