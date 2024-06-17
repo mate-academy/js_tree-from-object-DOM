@@ -29,11 +29,10 @@ function createTree(element, data) {
     li.textContent = key;
     ul.appendChild(li);
 
-    if (Object.keys(data[key].length)) {
+    if (Object.keys(data[key]).length) {
       createTree(li, data[key]);
     }
   }
-
   element.appendChild(ul);
 }
 
