@@ -65,5 +65,6 @@ function createTree(element, data) {
 
 createTree(tree, food);
 
-// I know what that code looks absurdly (for me for sure) bacause I do the same things two-tree times 
+// I know what that code looks absurdly (for me for sure)
+// bacause I just doing the same things two-tree times
 // but also I do not have any idea how to change this
