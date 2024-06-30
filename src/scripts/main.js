@@ -25,46 +25,22 @@ document.body
 const tree = document.querySelector('#tree');
 
 function createTree(element, data) {
-  const list = document.createElement('ul');
+  const ul = document.createElement('ul');
 
-  element.appendChild(list);
+  for (const key in data) {
+    if (data.hasOwnProperty(key)) {
+      const li = document.createElement('li');
 
-  for (const i in data) {
-    const listElement = document.createElement('li');
+      li.textContent = key;
 
-    listElement.textContent = i;
-    list.appendChild(listElement);
-
-    if (Object.keys(data[i]).length > 0) {
-      const subList = document.createElement('ul');
-
-      listElement.appendChild(subList);
-
-      for (const j in data[i]) {
-        const subListElement = document.createElement('li');
-
-        subListElement.textContent = j;
-        subList.appendChild(subListElement);
-
-        if (Object.keys(data[i][j]).length > 0) {
-          const subSubList = document.createElement('ul');
-
-          subListElement.appendChild(subSubList);
-
-          for (const k in data[i][j]) {
-            const subSubListElement = document.createElement('li');
-
-            subSubListElement.textContent = k;
-            subSubList.appendChild(subSubListElement);
-          }
-        }
+      if (Object.keys(data[key]).length > 0) {
+        createTree(li, data[key]);
       }
+      ul.appendChild(li);
     }
   }
+
+  element.appendChild(ul);
 }
 
 createTree(tree, food);
-
-// I know what that code looks absurdly (for me for sure)
-// bacause I just doing the same things two-tree times
-// but also I do not have any idea how to change this
