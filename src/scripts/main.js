@@ -24,7 +24,6 @@ function createTree(element, data) {
   if (!element || Object.keys(data).length === 0) {
     return;
   }
-  console.log(data);
 
   const list = document.createElement('ul');
 
@@ -37,3 +36,5 @@ function createTree(element, data) {
   }
   element.append(list);
 }
+
+createTree(tree, food);
