@@ -18,10 +18,32 @@ const food = {
   },
 };
 
-const tree = document.querySelector('#tree');
+const rootUl = document.createElement('ul');
+
+document.body.appendChild(rootUl);
 
 function createTree(element, data) {
-  // WRITE YOUR CODE HERE
+  if (Object.keys(data).length === 0) {
+    return null;
+  } else {
+    for (const key in data) {
+      const li = document.createElement('li');
+
+      li.textContent = key;
+      element.appendChild(li);
+
+      if (
+        typeof data[key] === 'object' &&
+        data[key] !== null &&
+        Object.keys(data[key]).length > 0
+      ) {
+        const ul = document.createElement('ul');
+
+        li.appendChild(ul);
+        createTree(ul, data[key]);
+      }
+    }
+  }
 }
 
-createTree(tree, food);
+createTree(rootUl, food);
