@@ -19,9 +19,25 @@ const food = {
 };
 
 const tree = document.querySelector('#tree');
+// const list = document.createElement('ul');
+
+// tree.appendChild(list).textContent = 'fdhhdf';
 
 function createTree(element, data) {
-  // WRITE YOUR CODE HERE
+  const list = document.createElement('ul');
+
+  for (const key in data) {
+    const listNested = document.createElement('li');
+
+    listNested.textContent = key;
+    list.appendChild(listNested);
+
+    if (typeof data[key] === 'object') {
+      createTree(listNested, data[key]);
+    }
+
+    element.appendChild(list);
+  }
 }
 
 createTree(tree, food);
