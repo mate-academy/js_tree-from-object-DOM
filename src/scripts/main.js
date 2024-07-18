@@ -28,10 +28,12 @@ function createTree(element, data) {
 
     item.textContent = key;
 
-    const childList = createTree(null, data[key]);
+    if (data[key] instanceof Object) {
+      const childList = createTree(item, data[key]);
 
-    if (childList) {
-      item.append(childList);
+      if (childList) {
+        item.append(childList);
+      }
     }
 
     mainList.append(item);
