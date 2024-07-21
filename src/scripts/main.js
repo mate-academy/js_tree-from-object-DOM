@@ -22,6 +22,7 @@ const tree = document.querySelector('#tree');
 
 function createTree(element, data) {
   const ul = document.createElement('ul');
+  let hesChildern = false;
 
   for (const key in data) {
     if (Object.prototype.hasOwnProperty.call(data, key)) {
@@ -36,10 +37,13 @@ function createTree(element, data) {
       }
 
       ul.appendChild(li);
+      hesChildern = true;
     }
   }
 
-  element.appendChild(ul);
+  if (hesChildern) {
+    element.appendChild(ul);
+  }
 }
 
 createTree(tree, food);
