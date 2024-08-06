@@ -18,7 +18,7 @@ const food = {
   },
 };
 
-const tree = document.getElementById('#tree');
+const tree = document.getElementById('tree');
 
 function createTree(element, data) {
   function createList(obj) {
