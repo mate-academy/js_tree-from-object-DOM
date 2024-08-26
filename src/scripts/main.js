@@ -31,15 +31,18 @@ function createTree(element, data) {
 
     li1Lvl.textContent = key1;
     ul1Lvl.append(li1Lvl);
-    ul1Lvl.append(ul2Lvl);
+    li1Lvl.append(ul2Lvl);
 
     for (const key2 in data[key1]) {
       const li2Lvl = document.createElement('li');
       const ul3Lvl = document.createElement('ul');
 
-      li2Lvl.textContent = key2;
       ul2Lvl.append(li2Lvl);
-      ul2Lvl.append(ul3Lvl);
+      li2Lvl.textContent = key2;
+
+      if (li2Lvl.textContent !== 'Wine' && li2Lvl.textContent !== 'Schnaps') {
+        li2Lvl.append(ul3Lvl);
+      }
 
       for (const key3 in data[key1][key2]) {
         const li3Lvl = document.createElement('li');

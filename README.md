@@ -16,3 +16,4 @@ Use keys as list items.
 > Hint: use [Recursion](https://javascript.info/recursion)
 
 ![screenshot of the tree](example/object-tree.png)
+~
