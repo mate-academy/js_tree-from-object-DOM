@@ -25,11 +25,12 @@ function createTree(element, data) {
 
   for (const key of dataKeys) {
     const li = document.createElement('li');
-    const ul = document.createElement('ul');
 
     li.innerHTML = key;
 
     if (Object.entries(data[key]).length !== 0) {
+      const ul = document.createElement('ul');
+
       li.insertAdjacentElement('beforeend', ul);
     }
 
