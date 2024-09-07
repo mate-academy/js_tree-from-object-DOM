@@ -12,7 +12,7 @@ Use keys as list items.
 `element` - is a DOM element
 
 `data` - is a nested object
-
+ 
 > Hint: use [Recursion](https://javascript.info/recursion)
 
 ![screenshot of the tree](example/object-tree.png)
