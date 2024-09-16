@@ -18,30 +18,28 @@ const food = {
   },
 };
 
+document.body.id = 'tree';
+
 const tree = document.querySelector('#tree');
 
 function createTree(element, data) {
-  const createUl = document.createElement('ul');
+  function createList(obj) {
+    const createUl = document.createElement('ul');
 
-  for (const key in data) {
-    const createLi = document.createElement('li');
+    for (const key in obj) {
+      const createLi = document.createElement('li');
 
-    createLi.textContent = key;
+      createLi.textContent = key;
+      createUl.append(createLi);
 
-    if (Object.keys(data[key]).length > 0) {
-      const childUl = createTree(null, data[key]);
-
-      createLi.appendChild(childUl);
+      if (Object.keys(obj[key]).length > 0) {
+        createLi.append(createList(obj[key]));
+      }
     }
 
-    createUl.appendChild(createLi);
+    return createUl;
   }
 
-  if (element) {
-    element.appendChild(createUl);
-  }
-
-  return createUl;
+  element.append(createList(data));
 }
-
 createTree(tree, food);
