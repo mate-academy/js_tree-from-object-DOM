@@ -20,8 +20,6 @@ const food = {
 
 const tree = document.querySelector('#tree');
 
-function createTree(element, data) {
-  // WRITE YOUR CODE HERE
-}
+function createTree(element, data) {}
 
 createTree(tree, food);
