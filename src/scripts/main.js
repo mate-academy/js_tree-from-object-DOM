@@ -5,7 +5,6 @@ const food = {
     Wine: {},
     Schnaps: {},
   },
-
   Fruit: {
     Red: {
       Cherry: {},
@@ -18,10 +17,30 @@ const food = {
   },
 };
 
-const tree = document.querySelector('#tree');
+document.addEventListener('DOMContentLoaded', () => {
+  const tree = document.querySelector('#tree');
 
-function createTree(element, data) {
-  // WRITE YOUR CODE HERE
-}
+  function createTree(element, data) {
+    if (!element || typeof data !== 'object') {
+      return;
+    }
 
-createTree(tree, food);
+    const ul = document.createElement('ul');
+
+    for (const key in data) {
+      const li = document.createElement('li');
+
+      li.textContent = key;
+
+      if (Object.keys(data[key]).length > 0) {
+        createTree(li, data[key]);
+      }
+
+      ul.appendChild(li);
+    }
+
+    element.appendChild(ul);
+  }
+
+  createTree(tree, food);
+});
