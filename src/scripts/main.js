@@ -28,7 +28,7 @@ function createTree(element, data) {
 
     nodeItemOfList.textContent = key;
 
-    if (Object.values(data).length !== 0) {
+    if (Object.keys(data[key]).length !== 0) {
       createTree(nodeItemOfList, data[key]);
     }
 
