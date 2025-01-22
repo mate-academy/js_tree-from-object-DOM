@@ -20,8 +20,23 @@ const food = {
 
 const tree = document.querySelector('#tree');
 
+createTree(tree, food);
+
 function createTree(element, data) {
-  // WRITE YOUR CODE HERE
+    element.innerHTML = createTreeHTML(data);
 }
 
-createTree(tree, food);
+function createTreeHTML(obj) {
+  let liItems = '';
+  let ul;
+
+  for (const key in obj) {
+    liItems += `<li>${key}${createTreeHTML(obj[key])}</li>`
+  }
+
+  if (liItems) {
+    ul = `<ul>${liItems}</ul>`;
+  }
+
+  return ul || '';
+}
