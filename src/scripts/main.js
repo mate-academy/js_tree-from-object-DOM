@@ -1,6 +1,7 @@
 'use strict';
 
-const food = { // data
+const food = {
+  // data
   Drink: {
     Wine: {},
     Schnaps: {},
@@ -18,23 +19,26 @@ const food = { // data
   },
 };
 
-// const tree = document.querySelector('#tree'); // element
-const tree = document.createElement('div');
+let tree = document.querySelector('#tree'); // element
 
-document.body.append(tree);
+if (!tree) {
+  tree = document.createElement('div');
+  tree.id = 'tree';
+  document.body.appendChild(tree);
+}
 
 function createTree(element, data) {
   const list = document.createElement('ul');
 
   element.append(list);
 
-  Object.keys(data).forEach((elem) => {
+  Object.keys(data).forEach((key) => {
     const item = document.createElement('li');
 
-    item.textContent = elem;
+    item.textContent = key;
     list.append(item);
 
-    const subdata = data[elem];
+    const subdata = data[key];
 
     if (typeof subdata === 'object' && Object.keys(subdata).length > 0) {
       createTree(item, subdata);
