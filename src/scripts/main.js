@@ -31,17 +31,19 @@ function createTree(element, data) {
 
   for (const key of keys) {
     const li = document.createElement('li');
-
     li.textContent = key;
 
-    if (Object.keys(data[key]).length > 0) {
-      createTree(li, data[key]);
+    const childUl = createTree(li, data[key]);
+
+    if (childUl) {
+      li.appendChild(childUl);
     }
 
     ul.appendChild(li);
   }
 
-  element.appendChild(ul);
+  return ul;
 }
 
-createTree(tree, food);
+tree.appendChild(createTree(tree, food));
+
