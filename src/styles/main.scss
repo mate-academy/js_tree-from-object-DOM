@@ -1,6 +1,7 @@
-@import 'utils';
-@import 'fonts';
-@import 'typography';
+@use 'utils';
+@use 'fonts';
+@use 'typography';
+@use '../styles/utils/vars' as *;
 
 body {
   background: $c-gray;
