@@ -33,7 +33,9 @@ function createTree(element, data) {
       ul.append(li);
 
       if (typeof data[key] === 'object' && data[key] !== null) {
-        createTree(li, data[key]);
+        if (Object.keys(data[key]).length > 0) {
+          createTree(li, data[key]);
+        }
       }
     }
   }
