@@ -1,27 +1,29 @@
+/* eslint-disable no-unused-vars */
 'use strict';
 
-const food = {
-  Drink: {
-    Wine: {},
-    Schnaps: {},
-  },
-
-  Fruit: {
-    Red: {
-      Cherry: {},
-      Strawberry: {},
-    },
-    Yellow: {
-      Banana: {},
-      Pineapple: {},
-    },
-  },
-};
-
-const tree = document.querySelector('#tree');
-
 function createTree(element, data) {
-  // WRITE YOUR CODE HERE
-}
+  if (!data || Object.keys(data).length === 0) {
+    return; // 🟢 Якщо об'єкт пустий — нічого не робимо
+  }
 
-createTree(tree, food);
+  function buildList(obj) {
+    const ul = document.createElement('ul');
+
+    for (const key in obj) {
+      const li = document.createElement('li');
+      // eslint-disable-next-line padding-line-between-statements
+      li.textContent = key;
+
+      if (Object.keys(obj[key]).length > 0) {
+        li.appendChild(buildList(obj[key]));
+      }
+
+      ul.appendChild(li);
+    }
+
+    return ul;
+  }
+
+  element.innerHTML = '';
+  element.appendChild(buildList(data));
+}
