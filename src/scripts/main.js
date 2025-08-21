@@ -18,28 +18,39 @@ const food = {
   },
 };
 
-const tree = document.querySelector('#tree');
+const treeContainer = document.getElementById('tree-container');
 
 function createTree(element, data) {
-  // Створюємо ul для поточного рівня
-  const ul = document.createElement('ul');
-
-  for (const key in data) {
-    const li = document.createElement('li');
-
-    li.textContent = key;
-
-    // Перевіряємо, чи є у властивості вкладений об’єкт
-    if (typeof data[key] === 'object' && data[key] !== null) {
-      // Рекурсивно створюємо підсписок
-      createTree(li, data[key]);
+  // Функція, що рекурсивно створює елементи списку
+  function createList(parentEl, obj) {
+    // Якщо об'єкт порожній, повертаємося, щоб не створювати пусті <ul>
+    if (Object.keys(obj).length === 0) {
+      return;
     }
 
-    ul.appendChild(li);
+    const ul = document.createElement('ul');
+
+    parentEl.appendChild(ul);
+
+    for (const key in obj) {
+      // Переконайтеся, що ми обробляємо лише власні властивості об'єкта
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
+        const li = document.createElement('li');
+
+        li.textContent = key;
+        ul.appendChild(li);
+
+        // Якщо значення є об'єктом, викликаємо рекурсію
+        if (typeof obj[key] === 'object' && obj[key] !== null) {
+          createList(li, obj[key]);
+        }
+      }
+    }
   }
 
-  // Додаємо ul до елемента DOM
-  element.appendChild(ul);
+  createList(element, data);
 }
 
-createTree(tree, food);
+// Правильний виклик функції, який вирішить обидві помилки
+// Він повинен бути поза функцією createTree
+createTree(treeContainer, food);
