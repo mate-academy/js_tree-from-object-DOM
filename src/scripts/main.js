@@ -21,35 +21,44 @@ const food = {
 const tree = document.querySelector('#tree');
 
 function createTree(element, data) {
-  const ul = document.createElement('ul');
+  if (!(element instanceof Element)) {
+    return;
+  }
 
-  document.body.appendChild(ul);
+  function createTreeNode(obj) {
+    const keys = Object.keys(obj);
 
-  for (const key1 in data) {
-    const li = document.createElement('li');
+    if (keys.length === 0) {
+      return null;
+    }
 
-    li.textContent = key1;
-    ul.appendChild(li);
+    const ul = document.createElement('ul');
 
-    if (typeof data[key1] === 'object') {
-      for (const key2 in data[key1]) {
-        if (key2 !== undefined) {
-          const li1 = document.createElement('li');
+    for (const key of keys) {
+      const li = document.createElement('li');
 
-          li1.textContent = key2;
-          li.appendChild(li1);
+      li.textContent = key;
 
-          for (const key3 in data[key1][key2]) {
-            if (typeof key3 === 'string') {
-              const li2 = document.createElement('li');
+      const value = obj[key];
 
-              li2.textContent = key3;
-              li1.appendChild(li2);
-            }
-          }
+      if (value !== null && typeof value === 'object') {
+        const nestedUl = createTreeNode(value);
+
+        if (nestedUl) {
+          li.appendChild(nestedUl);
         }
       }
+
+      ul.appendChild(li);
     }
+
+    return ul;
+  }
+
+  const rootTree = createTreeNode(data);
+
+  if (rootTree) {
+    element.appendChild(rootTree);
   }
 }
 
