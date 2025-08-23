@@ -43,3 +43,5 @@ function createTree(element, data) {
 }
 
 createTree(tree, food);
+
+export { createTree };
