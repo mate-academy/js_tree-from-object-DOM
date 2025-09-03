@@ -20,24 +20,37 @@ const food = {
 
 const tree = document.querySelector('div');
 
-// tree.id = 'tree';
-/// document.body.appendChild(tree);
-
 function createTree(element, data) {
-  // WRITE YOUR CODE HERE
+  const keys = Object.keys(data);
+
+  if (keys.length === 0) {
+    return;
+  }
+
   const ul = document.createElement('ul');
 
-  for (const key in data) {
+  for (const key of keys) {
     const li = document.createElement('li');
 
     li.textContent = key;
-    ul.appendChild(li);
 
-    if (typeof data[key] === 'object' && Object.keys(data[key]).length > 0) {
-      createTree(li, data[key]);
+    const value = data[key];
+
+    if (
+      value &&
+      typeof value === 'object' &&
+      value.constructor === Object &&
+      Object.keys(value).length > 0
+    ) {
+      createTree(li, value);
     }
+
+    ul.appendChild(li);
   }
+
   element.appendChild(ul);
 }
+
+window.createTree = createTree;
 
 createTree(tree, food);
