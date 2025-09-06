@@ -21,22 +21,26 @@ const food = {
 const body = document.querySelector('body');
 
 function createTree(element, data) {
+  element.innerHTML = '';
+
   for (const [key, value] of Object.entries(data)) {
-    if (Object.keys(value).length === 0) {
-      const li = document.createElement('li');
+    if (typeof value === 'object' && value !== null) {
+      if (Object.keys(value).length === 0) {
+        const li = document.createElement('li');
 
-      li.textContent = key;
+        li.textContent = key;
 
-      element.appendChild(li);
-    } else {
-      const outerLi = document.createElement('li');
-      const innerUl = document.createElement('ul');
+        element.appendChild(li);
+      } else {
+        const outerLi = document.createElement('li');
+        const innerUl = document.createElement('ul');
 
-      outerLi.textContent = key;
-      element.appendChild(outerLi);
-      outerLi.appendChild(innerUl);
+        outerLi.textContent = key;
+        element.appendChild(outerLi);
+        outerLi.appendChild(innerUl);
 
-      createTree(innerUl, data[key]);
+        createTree(innerUl, data[key]);
+      }
     }
   }
 }
