@@ -18,10 +18,39 @@ const food = {
   },
 };
 
-const tree = document.querySelector('#tree');
+const body = document.querySelector('body');
 
 function createTree(element, data) {
-  // WRITE YOUR CODE HERE
+  element.innerHTML = '';
+
+  for (const [key, value] of Object.entries(data)) {
+    if (typeof value === 'object' && value !== null) {
+      if (Object.keys(value).length === 0) {
+        const li = document.createElement('li');
+
+        li.textContent = key;
+
+        element.appendChild(li);
+      } else {
+        const outerLi = document.createElement('li');
+        const innerUl = document.createElement('ul');
+
+        outerLi.textContent = key;
+        element.appendChild(outerLi);
+        outerLi.appendChild(innerUl);
+
+        createTree(innerUl, data[key]);
+      }
+    }
+  }
 }
 
-createTree(tree, food);
+let mainUl = document.querySelector('ul');
+
+if (!mainUl) {
+  mainUl = document.createElement('ul');
+
+  body.appendChild(mainUl);
+}
+
+createTree(mainUl, food);
