@@ -17,8 +17,9 @@ const food = {
     },
   },
 };
+const tree = document.querySelector('#tree');
 
-export function createTree(element, data) {
+function createTree(element, data) {
   if (!data || typeof data !== 'object' || Object.keys(data).length === 0) {
     return;
   }
@@ -29,19 +30,14 @@ export function createTree(element, data) {
     const li = document.createElement('li');
 
     li.textContent = key;
-    createTree(li, value);
 
+    if (value && typeof value === 'object' && Object.keys(value).length) {
+      createTree(li, value);
+    }
     ul.appendChild(li);
   }
 
   element.appendChild(ul);
 }
 
-// Демонстрація (тільки в браузері)
-if (typeof document !== 'undefined') {
-  const tree = document.querySelector('#tree');
-
-  if (tree) {
-    createTree(tree, food);
-  }
-}
+createTree(tree, food);
