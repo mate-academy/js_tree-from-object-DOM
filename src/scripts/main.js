@@ -18,23 +18,30 @@ const food = {
   },
 };
 
-const tree = document.querySelector('#tree');
-
-function createTree(element, data) {
-  if (Object.keys(data).length === 0) {
+export function createTree(element, data) {
+  if (!data || typeof data !== 'object' || Object.keys(data).length === 0) {
     return;
   }
 
   const ul = document.createElement('ul');
 
-  for (const key in data) {
+  for (const [key, value] of Object.entries(data)) {
     const li = document.createElement('li');
 
     li.textContent = key;
-    createTree(li, data[key]);
+    createTree(li, value);
+
     ul.appendChild(li);
   }
+
   element.appendChild(ul);
 }
 
-createTree(tree, food);
+// Демонстрація (тільки в браузері)
+if (typeof document !== 'undefined') {
+  const tree = document.querySelector('#tree');
+
+  if (tree) {
+    createTree(tree, food);
+  }
+}
