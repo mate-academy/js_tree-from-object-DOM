@@ -20,21 +20,25 @@ const food = {
 
 const tree = document.querySelector('#tree');
 
-function createTree(element, data) {
+export function createTree(element, data) {
+  if (!element || !data) return;
+
+  const keys = Object.keys(data);
+  if (keys.length === 0) return; // Avoid empty ULs
+
   const ul = document.createElement('ul');
 
-  for (const key in data) {
-    if (data.hasOwnProperty(key)) {
-      const li = document.createElement('li');
-      li.textContent = key;
+  keys.forEach(key => {
+    const li = document.createElement('li');
+    li.textContent = key;
 
-      if (typeof data[key] === 'object' && data[key] !== null) {
-        createTree(li, data[key]);
-      }
-
-      ul.appendChild(li);
+    const child = data[key];
+    if (typeof child === 'object' && child !== null && Object.keys(child).length > 0) {
+      createTree(li, child); // Only recurse if child has keys
     }
-  }
+
+    ul.appendChild(li);
+  });
 
   element.appendChild(ul);
 }
