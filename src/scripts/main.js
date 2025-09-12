@@ -1,30 +1,11 @@
 'use strict';
 
-const food = {
-  Drink: {
-    Wine: {},
-    Schnaps: {},
-  },
-
-  Fruit: {
-    Red: {
-      Cherry: {},
-      Strawberry: {},
-    },
-    Yellow: {
-      Banana: {},
-      Pineapple: {},
-    },
-  },
-};
-
-const tree = document.querySelector('#tree');
-
 export function createTree(element, data) {
-  if (!element || !data) return;
+  if (!element) return;
+  if (typeof data !== 'object' || data === null) return; // stronger validation
 
   const keys = Object.keys(data);
-  if (keys.length === 0) return; // Avoid empty ULs
+  if (keys.length === 0) return; // avoid empty ULs
 
   const ul = document.createElement('ul');
 
@@ -34,7 +15,7 @@ export function createTree(element, data) {
 
     const child = data[key];
     if (typeof child === 'object' && child !== null && Object.keys(child).length > 0) {
-      createTree(li, child); // Only recurse if child has keys
+      createTree(li, child);
     }
 
     ul.appendChild(li);
@@ -42,5 +23,3 @@ export function createTree(element, data) {
 
   element.appendChild(ul);
 }
-
-createTree(tree, food);
