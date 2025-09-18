@@ -1,41 +1,37 @@
 'use strict';
 
 const food = {
-  Drink: {
-    Wine: {},
-    Schnaps: {},
-  },
-
+  Drink: { Wine: {}, Schnaps: {} },
   Fruit: {
-    Red: {
-      Cherry: {},
-      Strawberry: {},
-    },
-    Yellow: {
-      Banana: {},
-      Pineapple: {},
-    },
+    Red: { Cherry: {}, Strawberry: {} },
+    Yellow: { Banana: {}, Pineapple: {} },
   },
 };
 
 const tree = document.querySelector('#tree');
 
 function createTree(element, data) {
+  if (!element || !data || typeof data !== 'object') {
+    return;
+  }
+
+  element.innerHTML = '';
+
   function buildList(obj) {
-    if (!obj || Object.keys(obj).length === 0) {
-      return null;
+    const keys = Object.keys(obj); 
+
+    if (keys.length === 0) {
+      return null; 
     }
 
     const list = document.createElement('ul');
 
-    for (const key in obj) {
+    for (const key of keys) {
       const li = document.createElement('li');
       li.textContent = key;
 
-      const children = buildList(obj[key]);
-      if (children) {
-        li.appendChild(children);
-      }
+      const child = buildList(obj[key]);
+      if (child) li.appendChild(child);
 
       list.appendChild(li);
     }
@@ -43,11 +39,10 @@ function createTree(element, data) {
     return list;
   }
 
-  const builtTree = buildList(data);
-
-  if (builtTree) {
-    element.appendChild(builtTree);
-  }
+  const built = buildList(data);
+  if (built) element.appendChild(built);
 }
 
-createTree(tree, food);
+if (tree) {
+  createTree(tree, food);
+}
