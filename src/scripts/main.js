@@ -21,21 +21,24 @@ const food = {
 const tree = document.querySelector('#tree');
 
 function createTree(element, data) {
-  const ul = document.createElement('ul'); // створюємо список
+  const ul = document.createElement('ul');
 
-  for (let key in data) { // проходимо всі ключі об’єкта
-    const li = document.createElement('li'); // створюємо елемент списку
-    li.textContent = key; // вставляємо назву ключа
+  for (const key in data) {
+    if (!data.hasOwnProperty(key)) continue;
 
-    // якщо значення ключа — об’єкт і він не пустий, створюємо вкладене дерево
-    if (typeof data[key] === 'object' && Object.keys(data[key]).length > 0) {
+    const li = document.createElement('li');
+    li.textContent = key;
+
+    // Перевіряємо, що значення об’єкт і не null, і має ключі
+    if (typeof data[key] === 'object' && data[key] !== null && Object.keys(data[key]).length > 0) {
       createTree(li, data[key]); // рекурсивно додаємо підсписок
     }
 
-    ul.append(li); // додаємо пункт у список
+    ul.appendChild(li);
   }
 
-  element.append(ul); // додаємо список у переданий контейнер
+  element.appendChild(ul);
 }
+
 
 createTree(tree, food);
