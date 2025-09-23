@@ -21,6 +21,9 @@ const food = {
 const tree = document.querySelector('#tree');
 
 function createTree(element, data) {
+  // Якщо об’єкт порожній — нічого не робимо
+  if (!data || Object.keys(data).length === 0) return;
+
   const ul = document.createElement('ul');
 
   for (const key in data) {
@@ -29,7 +32,7 @@ function createTree(element, data) {
     const li = document.createElement('li');
     li.textContent = key;
 
-    // Перевіряємо, що значення об’єкт і не null, і має ключі
+    // Перевірка, що значення — об’єкт, не null і має ключі
     if (typeof data[key] === 'object' && data[key] !== null && Object.keys(data[key]).length > 0) {
       createTree(li, data[key]); // рекурсивно додаємо підсписок
     }
