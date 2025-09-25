@@ -21,3 +21,4 @@ Use keys as list items.
 This project uses Parcel, which automatically handles the compilation of SCSS to CSS out of the box.
 
 You do not need to manually compile your .scss files. Simply link your main SCSS file directly in your HTML, and Parcel will take care of the rest.
+
