@@ -18,7 +18,7 @@ const food = {
   },
 };
 
-export function createTree(element, data) {
+function createTree(element, data) {
   const ul = document.createElement('ul');
 
   Object.keys(data).forEach((key) => {
