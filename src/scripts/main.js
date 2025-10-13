@@ -20,8 +20,33 @@ const food = {
 
 const tree = document.querySelector('#tree');
 
+function isNonEmptyObject(v) {
+  return v && typeof v === 'object' && Object.keys(v).length > 0;
+}
+
 function createTree(element, data) {
   // WRITE YOUR CODE HERE
+  if (!isNonEmptyObject(data)) {
+    return;
+  }
+
+  const ul = document.createElement('ul');
+
+  for (const key of Object.keys(data)) {
+    const li = document.createElement('li');
+
+    li.textContent = key;
+
+    const value = data[key];
+
+    if (isNonEmptyObject(value)) {
+      createTree(li, value);
+    }
+
+    ul.appendChild(li);
+  }
+
+  element.appendChild(ul);
 }
 
 createTree(tree, food);
