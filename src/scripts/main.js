@@ -24,10 +24,10 @@ function isNonEmptyObject(v) {
   return v && typeof v === 'object' && Object.keys(v).length > 0;
 }
 
-function createTree(data) {
+function createTree(element, data) {
   // WRITE YOUR CODE HERE
   if (!isNonEmptyObject(data)) {
-    return null;
+    return;
   }
 
   const ul = document.createElement('ul');
@@ -40,21 +40,16 @@ function createTree(data) {
     const value = data[key];
 
     if (isNonEmptyObject(value)) {
-      const childUl = createTree(value);
+      const childUl = document.createElement('ul');
 
-      if (childUl) {
-        li.appendChild(childUl);
-      }
+      li.appendChild(childUl);
+      createTree(childUl, value);
     }
 
     ul.appendChild(li);
   }
 
-  return ul;
+  element.appendChild(ul);
 }
 
-const treeElement = createTree(food);
-
-if (treeElement) {
-  tree.appendChild(treeElement);
-}
+createTree(tree, food);
