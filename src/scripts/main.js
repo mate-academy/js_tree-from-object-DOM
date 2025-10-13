@@ -40,10 +40,7 @@ function createTree(element, data) {
     const value = data[key];
 
     if (isNonEmptyObject(value)) {
-      const childUl = document.createElement('ul');
-
-      li.appendChild(childUl);
-      createTree(childUl, value);
+      createTree(li, value);
     }
 
     ul.appendChild(li);
