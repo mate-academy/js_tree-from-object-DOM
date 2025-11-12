@@ -20,7 +20,8 @@ const food = {
 const tree = document.querySelector('#tree');
 
 function createTree(element, data) {
-  if (!element || typeof data !== 'object') {
+  // Перевірка, що element існує і data — це непорожній об’єкт
+  if (!element || typeof data !== 'object' || data === null) {
     return;
   }
 
@@ -34,7 +35,11 @@ function createTree(element, data) {
 
       li.textContent = key;
 
-      if (Object.keys(children).length) {
+      if (
+        children &&
+        typeof children === 'object' &&
+        Object.keys(children).length > 0
+      ) {
         li.append(buildList(children));
       }
 
