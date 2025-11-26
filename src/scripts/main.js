@@ -27,14 +27,14 @@ function createTree(element, data) {
     const li = document.createElement('li');
 
     li.textContent = key;
-    ul.appendChild(li);
+    ul.append(li);
 
-    if (Object.keys(data[key]).length > 0) {
+    if (Object.keys(data[key]).length) {
       createTree(li, data[key]);
     }
   }
 
-  element.appendChild(ul);
+  element.append(ul);
 }
 
 createTree(tree, food);
