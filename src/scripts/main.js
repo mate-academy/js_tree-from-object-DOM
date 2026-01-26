@@ -26,7 +26,11 @@ function createTree(element, data) {
 
     newLi.textContent = `${key}`;
 
-    if (typeof data[key] === 'object' && Object.keys(data[key]).length) {
+    if (
+      data[key] !== null &&
+      typeof data[key] === 'object' &&
+      Object.keys(data[key]).length
+    ) {
       const newUl = document.createElement('ul');
 
       createTree(newUl, data[key]);
