@@ -1,6 +1,6 @@
 # Tree from object
-Write a function `createTree(element, data)` that creates a nested list of `ul/li` from an object. 
-Use keys as list items. 
+Write a function `createTree(element, data)` that creates a nested list of `ul/li` from an object.
+Use keys as list items.
 
 `element` - is a DOM element
 
@@ -11,7 +11,7 @@ Use keys as list items.
 ![screenshot of the tree](example/object-tree.png)
 
 1. Replace `<your_account>` with your GitHub username in the link
-    - [DEMO LINK](https://<your_account>.github.io/js_tree-from-object-DOM/)
+    - [DEMO LINK](https://vladahvala.github.io/js_tree-from-object-DOM/)
 2. Follow [this instructions](https://github.com/mate-academy/js_task-DOM-guideline)
     - Run `npm run test` command to test your code;
     - Run `npm run test:only -- -n` to run fast test ignoring linter;
