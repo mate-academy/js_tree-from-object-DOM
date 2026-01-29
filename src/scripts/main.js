@@ -18,10 +18,27 @@ const food = {
   },
 };
 
+// Знаходимо елемент для дерева
 const tree = document.querySelector('#tree');
 
 function createTree(element, data) {
-  // WRITE YOUR CODE HERE
+  const ul = document.createElement('ul');
+
+  for (const key in data) {
+    const li = document.createElement('li');
+
+    li.textContent = key;
+
+    // Якщо є вкладені об’єкти, викликаємо рекурсивно
+    if (data[key] && Object.keys(data[key]).length > 0) {
+      createTree(li, data[key]);
+    }
+
+    ul.appendChild(li);
+  }
+
+  element.appendChild(ul);
 }
 
+// Створюємо дерево в DOM
 createTree(tree, food);
