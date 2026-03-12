@@ -48,7 +48,7 @@ const createLi = (text) => {
 const isNonEmptyObject = (value) =>
   typeof value === 'object' && value !== null && Object.keys(value).length > 0;
 
-function createTree(element, data, className) {
+function createTree(element, data) {
   if (!element || !isNonEmptyObject(data)) {
     return;
   }
@@ -57,7 +57,7 @@ function createTree(element, data, className) {
     element.removeChild(element.firstChild);
   }
 
-  const ul = renderSubtree(data, 0, className);
+  const ul = renderSubtree(data, 0);
 
   if (ul) {
     element.appendChild(ul);
@@ -90,4 +90,4 @@ function renderSubtree(data, depth = 0, className = '') {
   return ul;
 }
 
-createTree(tree, food, 'tree');
+createTree(tree, food);
