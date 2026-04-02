@@ -28,13 +28,15 @@ function createTree(element, data) {
       root.textContent = key;
       nestedList.appendChild(root);
 
-      if (list[key] && typeof list[key] === 'object') {
-        const splitRoot = document.createElement('ul');
+      if (
+        list[key] &&
+        typeof list[key] === 'object' &&
+        Object.keys(list[key]).length > 0
+      ) {
+        const splitedRoot = document.createElement('ul');
 
-        if (Object.keys(list[key]).length > 0) {
-          root.appendChild(splitRoot);
-        }
-        branch(list[key], splitRoot);
+        root.appendChild(splitedRoot);
+        branch(list[key], splitedRoot);
       }
     }
   }
