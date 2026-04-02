@@ -40,7 +40,7 @@ function createTree(element, data) {
       }
     }
   }
-
+ 
   branch(data);
 }
 
