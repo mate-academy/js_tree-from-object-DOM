@@ -26,13 +26,14 @@ function createTree(element, data) {
 
   keys.forEach((key) => {
     const li = document.createElement('li');
+
     li.textContent = key;
 
     if (Object.keys(data[key]).length > 0) {
       createTree(li, data[key]);
     }
     ul.append(li);
-  })
+  });
   element.append(ul);
 }
 
