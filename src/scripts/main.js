@@ -23,7 +23,7 @@ const tree = document.querySelector('#tree');
 function createTree(element, data) {
   const ul = document.createElement('ul');
 
-  for (const char in data) {
+  for (const char of Object.keys(data)) {
     const li = document.createElement('li');
 
     li.textContent = char;
@@ -31,7 +31,7 @@ function createTree(element, data) {
     if (
       typeof data[char] === 'object' &&
       data[char] !== null &&
-      Object.values(data[char]).length > 0
+      Object.keys(data[char]).length > 0
     ) {
       createTree(li, data[char]);
     }
