@@ -17,11 +17,55 @@ const food = {
     },
   },
 };
+// const tree = document.querySelector('#tree');
+// const elementDiv = document.createElement('div');
 
-const tree = document.querySelector('#tree');
+// elementDiv.id = 'tree';
+
+// document.body.appendChild(elementDiv);
+
+// function createTree(element, data) {
+//   const ul = document.createElement('ul');
+
+//   for (const key in data) {
+//     const li = document.createElement('li');
+
+//     li.textContent = key;
+
+//     if (typeof data[key] === 'object' && Object.keys(data[key]).length > 0) {
+//       createTree(li, data[key]);
+//     }
+
+//     ul.appendChild(li);
+//   }
+
+//   element.appendChild(ul);
+// }
+
+// const tree = document.querySelector('#tree');
+
+const elementDiv = document.createElement('div');
+
+elementDiv.id = 'tree';
+
+document.body.appendChild(elementDiv);
 
 function createTree(element, data) {
-  // WRITE YOUR CODE HERE
+  const ul = document.createElement('ul');
+
+  for (const key in data) {
+    const li = document.createElement('li');
+
+    li.textContent = key;
+
+    if (typeof data[key] === 'object' && Object.keys(data[key]).length > 0) {
+      createTree(li, data[key]);
+    }
+
+    ul.appendChild(li);
+  }
+
+  element.appendChild(ul);
 }
 
-createTree(tree, food);
+createTree(elementDiv, food);
