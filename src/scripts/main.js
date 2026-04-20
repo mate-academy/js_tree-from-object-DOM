@@ -1,27 +1,42 @@
 'use strict';
 
-const food = {
-  Drink: {
-    Wine: {},
-    Schnaps: {},
-  },
+document.addEventListener('DOMContentLoaded', () => {
+  const tree = document.getElementById('tree');
 
-  Fruit: {
-    Red: {
-      Cherry: {},
-      Strawberry: {},
+  const food = {
+    Drink: {
+      Wine: {},
+      Schnaps: {},
     },
-    Yellow: {
-      Banana: {},
-      Pineapple: {},
+    Fruit: {
+      Red: {
+        Cherry: {},
+        Strawberry: {},
+      },
+      Yellow: {
+        Banana: {},
+        Pineapple: {},
+      },
     },
-  },
-};
+  };
 
-const tree = document.querySelector('#tree');
+  function createTree(element, data) {
+    if (!data || typeof data !== 'object') return;
 
-function createTree(element, data) {
-  // WRITE YOUR CODE HERE
-}
+    const ul = document.createElement('ul');
+    element.appendChild(ul);
 
-createTree(tree, food);
+    for (const key in data) {
+      const li = document.createElement('li');
+      li.textContent = key;
+      ul.appendChild(li);
+
+      // Якщо є вкладені об'єкти — рекурсивно додаємо ul всередину li
+      if (typeof data[key] === 'object' && Object.keys(data[key]).length > 0) {
+        createTree(li, data[key]);
+      }
+    }
+  }
+
+  createTree(tree, food);
+});
