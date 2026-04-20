@@ -18,10 +18,31 @@ const food = {
   },
 };
 
-const tree = document.querySelector('#tree');
+let tree = document.querySelector('#tree');
+
+if (!tree) {
+  tree = document.createElement('div');
+  tree.id = 'tree';
+  document.body.appendChild(tree);
+}
 
 function createTree(element, data) {
-  // WRITE YOUR CODE HERE
+  const foodTree = document.createElement('ul');
+
+  element.append(foodTree);
+
+  Object.keys(data).forEach((key) => {
+    const item = document.createElement('li');
+
+    item.textContent = key;
+    foodTree.append(item);
+
+    const nested = data[key];
+
+    if (typeof nested === 'object' && Object.keys(nested).length > 0) {
+      createTree(item, nested);
+    }
+  });
 }
 
 createTree(tree, food);
