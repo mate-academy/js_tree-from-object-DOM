@@ -1,27 +1,34 @@
 'use strict';
 
-const food = {
-  Drink: {
-    Wine: {},
-    Schnaps: {},
-  },
+export function createTree(element, data) {
+  element.innerHTML = '';
 
-  Fruit: {
-    Red: {
-      Cherry: {},
-      Strawberry: {},
-    },
-    Yellow: {
-      Banana: {},
-      Pineapple: {},
-    },
-  },
-};
+  const ul = document.createElement('ul');
 
-const tree = document.querySelector('#tree');
+  element.appendChild(ul);
 
-function createTree(element, data) {
-  // WRITE YOUR CODE HERE
+  function buildList(parentUl, obj) {
+    for (const key in obj) {
+      const value = obj[key];
+      const li = document.createElement('li');
+
+      const hasChildren =
+        value && typeof value === 'object' && Object.keys(value).length > 0;
+
+      if (hasChildren) {
+        li.textContent = `◦ ${key}`;
+
+        const nestedUl = document.createElement('ul');
+
+        li.appendChild(nestedUl);
+        buildList(nestedUl, value);
+      } else {
+        li.textContent = `• ${key}`;
+      }
+
+      parentUl.appendChild(li);
+    }
+  }
+
+  buildList(ul, data);
 }
-
-createTree(tree, food);
