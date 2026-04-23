@@ -21,7 +21,27 @@ const food = {
 const tree = document.querySelector('#tree');
 
 function createTree(element, data) {
-  // WRITE YOUR CODE HERE
+  // Якщо об’єкт порожній — нічого не робимо
+  if (!data || Object.keys(data).length === 0) return;
+
+  const ul = document.createElement('ul');
+
+  for (const key in data) {
+    if (!data.hasOwnProperty(key)) continue;
+
+    const li = document.createElement('li');
+    li.textContent = key;
+
+    // Перевірка, що значення — об’єкт, не null і має ключі
+    if (typeof data[key] === 'object' && data[key] !== null && Object.keys(data[key]).length > 0) {
+      createTree(li, data[key]); // рекурсивно додаємо підсписок
+    }
+
+    ul.appendChild(li);
+  }
+
+  element.appendChild(ul);
 }
+
 
 createTree(tree, food);
