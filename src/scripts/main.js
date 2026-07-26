@@ -25,3 +25,21 @@ function createTree(element, data) {
 }
 
 createTree(tree, food);
+function createTree(element, data) {
+  if (!Object.keys(data).length) return;
+
+  const ul = document.createElement('ul');
+
+  for (const key in data) {
+    const li = document.createElement('li');
+    li.textContent = key;
+
+    if (typeof data[key] === 'object') {
+      createTree(li, data[key]);
+    }
+
+    ul.appendChild(li);
+  }
+
+  element.appendChild(ul);
+}
