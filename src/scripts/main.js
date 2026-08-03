@@ -25,16 +25,16 @@ function createTree(element, data) {
     return;
   }
 
-  const ulItem = document.createElement('ul');
+  const ulItem1 = document.createElement('ul');
 
-  element.appendChild(ulItem);
+  element.appendChild(ulItem1);
 
   for (const key of Object.keys(data)) {
     const liItem = document.createElement('li');
 
     liItem.textContent = key;
 
-    ulItem.appendChild(liItem);
+    ulItem1.appendChild(liItem);
 
     createTree(liItem, data[key]);
   }
