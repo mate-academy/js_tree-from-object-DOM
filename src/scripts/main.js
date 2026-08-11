@@ -33,7 +33,7 @@ function createTree(element, data) {
     mainUl.insertAdjacentElement('beforeend', li);
 
     if (Object.keys(data[key]).length) {
-      createTree(mainUl, data[key]);
+      createTree(li, data[key]);
     }
   }
 }
