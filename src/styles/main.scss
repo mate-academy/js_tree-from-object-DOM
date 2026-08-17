@@ -2,6 +2,44 @@
 @import 'fonts';
 @import 'typography';
 
+@mixin li {
+  transform: scale(1.05);
+  transform-origin: left;
+  cursor: pointer;
+}
+
 body {
   background: $c-gray;
+}
+
+ul {
+  list-style: disc;
+
+  li {
+    &:hover {
+      background-color: #97ffbf;
+      @include li;
+    }
+  }
+
+  ul {
+    list-style: circle;
+
+    li {
+      &:hover {
+        background-color: #ee97ff;
+        @include li;
+      }
+    }
+
+    ul {
+      list-style: square;
+      li {
+        &:hover {
+          background-color: #97e7ff;
+          @include li;
+        }
+      }
+    }
+  }
 }
