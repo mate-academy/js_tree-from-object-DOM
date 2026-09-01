@@ -33,10 +33,11 @@ function createTree(element, data) {
     li.textContent = item;
 
     if (typeof data[item] === 'object') {
-      li.appendChild(createTree(null, data[item]));
-    } else {
-      ul.appendChild(li);
+      const nestedUl = createTree(ul, data[item]);
+
+      li.appendChild(nestedUl);
     }
+    ul.appendChild(li);
   }
 
   return element.appendChild(ul);
