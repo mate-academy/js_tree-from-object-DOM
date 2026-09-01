@@ -32,7 +32,7 @@ function createTree(element, data) {
 
     li.textContent = item;
 
-    if (typeof data[item] === 'object') {
+    if (typeof data[item] === 'object' && Object.keys(data[item]).length > 0) {
       const nestedUl = createTree(ul, data[item]);
 
       li.appendChild(nestedUl);
