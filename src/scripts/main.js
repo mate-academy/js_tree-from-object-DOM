@@ -32,11 +32,11 @@ function createTree(element, data) {
 
     li.textContent = key;
     list.append(li);
-    element.append(list);
-
+    
     if (Object.keys(value).length > 0) {
       createTree(li, value);
     }
   }
+  element.append(list);
 }
 createTree(tree, food);
