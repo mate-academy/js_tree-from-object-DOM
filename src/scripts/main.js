@@ -35,10 +35,8 @@ function createTree(element, data) {
     li.textContent = keys;
 
     ul.append(li);
-
     createTree(li, data[keys]);
   }
 }
-
 
 createTree(tree, food);
